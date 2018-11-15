@@ -5,7 +5,7 @@
  */
 package forms;
 
-import classes.Cliente;
+import classes.Fornecedor;
 import javax.swing.JOptionPane;
 
 /**
@@ -118,9 +118,9 @@ public class FormBuscarCliente extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         String cpf = tfCpf.getText();
-        Cliente cliente = FormPricipal.daoCliente.buscarCliente(cpf);
-        if(cliente != null){
-            jTextArea1.setText(cliente.toString());
+        Fornecedor fornecedor = FormPricipal.daoFornecedor.buscarFornecedor(cpf);
+        if(fornecedor != null){
+            jTextArea1.setText(fornecedor.toString());
             btExcluir.setEnabled(true);
             tfCpf.setEnabled(false);
         }
@@ -138,7 +138,7 @@ public class FormBuscarCliente extends javax.swing.JFrame {
 
     private void btExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btExcluirActionPerformed
         // TODO add your handling code here:
-        FormPricipal.daoCliente.removerCliente(tfCpf.getText());
+        FormPricipal.daoFornecedor.removerFornecedor(tfCpf.getText());
         
         btExcluir.setEnabled(false);
         tfCpf.setText("");

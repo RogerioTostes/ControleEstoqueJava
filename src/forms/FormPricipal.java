@@ -5,17 +5,17 @@
  */
 package forms;
 
-import dao.ClienteDAO;
+import dao.FornecedorDAO;
 import dao.LivroDAO;
 import dao.VendaDAO;
 
 /**
  *
- * @author Tiago Oliveira
+ * @author Gerim
  */
 public class FormPricipal extends javax.swing.JFrame {
     
-    public static ClienteDAO daoCliente = null;
+    public static FornecedorDAO daoFornecedor = null;
     public static LivroDAO daoLivro = null;
     public static VendaDAO daoVenda = null;
 
@@ -26,7 +26,7 @@ public class FormPricipal extends javax.swing.JFrame {
         initComponents();
         this.setExtendedState(this.MAXIMIZED_BOTH);
         
-        daoCliente = new ClienteDAO();
+        daoFornecedor = new FornecedorDAO();
         daoLivro = new LivroDAO();
         daoVenda = new VendaDAO();
     }
@@ -73,7 +73,7 @@ public class FormPricipal extends javax.swing.JFrame {
         jPanel1.setLayout(new java.awt.BorderLayout());
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/logo.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/logoRogerio.png"))); // NOI18N
         jPanel1.add(jLabel1, java.awt.BorderLayout.CENTER);
 
         jMenuCadastro.setText("Cadastros");
@@ -184,7 +184,7 @@ public class FormPricipal extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 447, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();

@@ -5,7 +5,7 @@
  */
 package forms;
 
-import classes.Cliente;
+import classes.Fornecedor;
 import classes.Item;
 import classes.Livro;
 import classes.Venda;
@@ -19,7 +19,7 @@ import javax.xml.bind.annotation.XmlElement;
  */
 public class FormVenda extends javax.swing.JFrame {
     private Venda venda = null;
-    private Cliente cliente = null;
+    private Fornecedor fornecedor = null;
     private Livro livro = null;
     
     private float soma = 0;
@@ -322,13 +322,13 @@ public class FormVenda extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowOpened
 
     private void btBuscarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btBuscarClienteActionPerformed
-        cliente = FormPricipal.daoCliente.buscarCliente(tfCpf.getText());
-        if(cliente != null)
+        fornecedor = FormPricipal.daoFornecedor.buscarFornecedor(tfCpf.getText());
+        if(fornecedor != null)
         {
-            lbNome.setText(cliente.getNome());
-            lbEndereco.setText(cliente.getEndereco().getLogradouro());
-            lbTelefone.setText(cliente.getEmail());
-            lbEmail.setText(cliente.getEmail());
+            lbNome.setText(fornecedor.getNome());
+            lbEndereco.setText(fornecedor.getEndereco().getLogradouro());
+            lbTelefone.setText(fornecedor.getEmail());
+            lbEmail.setText(fornecedor.getEmail());
             
             btConfirmaCliente.setEnabled(true);
         }
@@ -358,7 +358,7 @@ public class FormVenda extends javax.swing.JFrame {
     }//GEN-LAST:event_btBuscarItemActionPerformed
 
     private void btConfirmaClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConfirmaClienteActionPerformed
-        venda.setCliente(cliente);
+        venda.setCliente(fornecedor);
         btConfirmaCliente.setEnabled(false);
         btBuscarItem.setEnabled(true);
         // TODO add your handling code here:

@@ -5,7 +5,7 @@
  */
 package forms;
 
-import classes.Cliente;
+import classes.Fornecedor;
 import java.util.Enumeration;
 import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
@@ -280,25 +280,25 @@ public class FormCliente extends javax.swing.JFrame {
     private void btCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCadastrarActionPerformed
         
         // Criar o objeto e preenche-lo
-        Cliente cliente = new Cliente();
+        Fornecedor fornecedor = new Fornecedor();
         
         // Pegar os dados da tela
-        cliente.setCpf(tfCpf.getText());
-        cliente.setNome(tfNome.getText());
-        cliente.setTelefone(tfTelefone.getText());
-        cliente.setEmail(tfEmail.getText());
-        cliente.setEstadoCivil(bgEstadoCivil.getSelection().getActionCommand());
+        fornecedor.setCpf(tfCpf.getText());
+        fornecedor.setNome(tfNome.getText());
+        fornecedor.setTelefone(tfTelefone.getText());
+        fornecedor.setEmail(tfEmail.getText());
+        fornecedor.setEstadoCivil(bgEstadoCivil.getSelection().getActionCommand());
         
-        cliente.getEndereco().setLogradouro(tfLogradouro.getText());
-        cliente.getEndereco().setComplemento(tfComplemento.getText());
-        cliente.getEndereco().setCidade(tfCidade.getText());
-        cliente.getEndereco().setEstado(cbEstado.getSelectedItem().toString());
-        cliente.getEndereco().setCep(tfCep.getText());
+        fornecedor.getEndereco().setLogradouro(tfLogradouro.getText());
+        fornecedor.getEndereco().setComplemento(tfComplemento.getText());
+        fornecedor.getEndereco().setCidade(tfCidade.getText());
+        fornecedor.getEndereco().setEstado(cbEstado.getSelectedItem().toString());
+        fornecedor.getEndereco().setCep(tfCep.getText());
         
         
         
         // Salvar na base de dados
-        FormPricipal.daoCliente.adicionarCliente(cliente);
+        FormPricipal.daoFornecedor.adicionarFornecedor(fornecedor);
         JOptionPane.showMessageDialog(null, "Cliente cadastrado com sucesso", "Cadastro de Clientes", JOptionPane.INFORMATION_MESSAGE);
         
         limpar();
@@ -332,29 +332,29 @@ public class FormCliente extends javax.swing.JFrame {
     private void btBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btBuscarActionPerformed
         // TODO add your handling code here:
         String CPF = tfCpf.getText();
-        Cliente cliente = FormPricipal.daoCliente.buscarCliente(CPF);
-        tfNome.setText(cliente.getNome());
-        tfTelefone.setText(cliente.getTelefone());
-        tfEmail.setText(cliente.getEmail());
+        Fornecedor fornecedor = FormPricipal.daoFornecedor.buscarFornecedor(CPF);
+        tfNome.setText(fornecedor.getNome());
+        tfTelefone.setText(fornecedor.getTelefone());
+        tfEmail.setText(fornecedor.getEmail());
         // setar o estado civil nos campos radio
         JRadioButton radio;
         Enumeration en = bgEstadoCivil.getElements();
         while(en.hasMoreElements()){
             radio = (JRadioButton) en.nextElement();
-            if(radio.getText().equals(cliente.getEstadoCivil()))
+            if(radio.getText().equals(fornecedor.getEstadoCivil()))
                 radio.setSelected(true);
         }
         
-        tfLogradouro.setText(cliente.getEndereco().getLogradouro());
-        tfComplemento.setText(cliente.getEndereco().getComplemento());
-        tfCidade.setText(cliente.getEndereco().getCidade());
+        tfLogradouro.setText(fornecedor.getEndereco().getLogradouro());
+        tfComplemento.setText(fornecedor.getEndereco().getComplemento());
+        tfCidade.setText(fornecedor.getEndereco().getCidade());
         // setar cep no combobox
         for (int i = 0; i < cbEstado.getItemCount(); i++){
-            if(cbEstado.getItemAt(i).equals(cliente.getEndereco().getEstado())){
+            if(cbEstado.getItemAt(i).equals(fornecedor.getEndereco().getEstado())){
                 cbEstado.setSelectedItem(i);
             }
         }
-        tfCep.setText(cliente.getEndereco().getCep());
+        tfCep.setText(fornecedor.getEndereco().getCep());
         
     }//GEN-LAST:event_btBuscarActionPerformed
 
@@ -366,25 +366,25 @@ public class FormCliente extends javax.swing.JFrame {
     private void btAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAtualizarActionPerformed
         // TODO add your handling code here:
         // Criar o objeto e preenche-lo
-        Cliente cliente = new Cliente();
+        Fornecedor fornecedor = new Fornecedor();
         
         // Pegar os dados da tela
-        cliente.setCpf(tfCpf.getText());
-        cliente.setNome(tfNome.getText());
-        cliente.setTelefone(tfTelefone.getText());
-        cliente.setEmail(tfEmail.getText());
-        cliente.setEstadoCivil(bgEstadoCivil.getSelection().getActionCommand());
+        fornecedor.setCpf(tfCpf.getText());
+        fornecedor.setNome(tfNome.getText());
+        fornecedor.setTelefone(tfTelefone.getText());
+        fornecedor.setEmail(tfEmail.getText());
+        fornecedor.setEstadoCivil(bgEstadoCivil.getSelection().getActionCommand());
         
-        cliente.getEndereco().setLogradouro(tfLogradouro.getText());
-        cliente.getEndereco().setComplemento(tfComplemento.getText());
-        cliente.getEndereco().setCidade(tfCidade.getText());
-        cliente.getEndereco().setEstado(cbEstado.getSelectedItem().toString());
-        cliente.getEndereco().setCep(tfCep.getText());
+        fornecedor.getEndereco().setLogradouro(tfLogradouro.getText());
+        fornecedor.getEndereco().setComplemento(tfComplemento.getText());
+        fornecedor.getEndereco().setCidade(tfCidade.getText());
+        fornecedor.getEndereco().setEstado(cbEstado.getSelectedItem().toString());
+        fornecedor.getEndereco().setCep(tfCep.getText());
         
         
         
         // Salvar na base de dados
-        FormPricipal.daoCliente.alterarCliente(cliente);
+        FormPricipal.daoFornecedor.alterarFornecedor(fornecedor);
         JOptionPane.showMessageDialog(null, "Cliente alterado com sucesso", "Cadastro de Clientes", JOptionPane.INFORMATION_MESSAGE);
         
         limpar();

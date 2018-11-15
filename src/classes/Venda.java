@@ -17,7 +17,7 @@ import java.util.List;
 public class Venda {
     
     private  int numero=0;
-    private Cliente cliente;
+    private Fornecedor fornecedor;
     private List<Item> lista;
     private float valorTotal;
     private Date data;
@@ -73,8 +73,8 @@ public class Venda {
         String str = "";
                str += "--------- Dados da Venda Nº "+ numero + " ---------";
         str += "\nData Venda: "+ getData();
-        str += "\nCPF do Cliente: "+ cliente.getCpf();
-        str += "\nNome do Cliente: "+ cliente.getNome();
+        str += "\nCPF do Cliente: "+ fornecedor.getCpf();
+        str += "\nNome do Cliente: "+ fornecedor.getNome();
         for(Item i: lista)
         {
             str += i.toString();
@@ -92,12 +92,12 @@ public class Venda {
         this.numero = numero;
     }
        
-    public Cliente getCliente() {
-        return cliente;
+    public Fornecedor getCliente() {
+        return fornecedor;
     }
 
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
+    public void setCliente(Fornecedor fornecedor) {
+        this.fornecedor = fornecedor;
     }
 
     public float getValorTotal() {

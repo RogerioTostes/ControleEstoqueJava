@@ -7,9 +7,9 @@ package classes;
 
 /**
  *
- * @author Tiago Oliveira
+ * @author Gerim
  */
-public class Cliente {
+public class Fornecedor {
     
     private String nome;
     private String cpf;
@@ -18,7 +18,7 @@ public class Cliente {
     private String email;
     private Endereco endereco;
 
-    public Cliente(String nome, String cpf, String estadoCivil, String telefone, String email, Endereco endereco) {
+    public Fornecedor(String nome, String cpf, String estadoCivil, String telefone, String email, Endereco endereco) {
         this.nome = nome;
         this.cpf = cpf;
         this.estadoCivil = estadoCivil;
@@ -27,7 +27,7 @@ public class Cliente {
         this.endereco = endereco;
     }
 
-    public Cliente() {
+    public Fornecedor() {
         endereco = new Endereco();
     }
     
