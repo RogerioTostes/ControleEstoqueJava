@@ -7,7 +7,7 @@ package forms;
 
 import classes.Fornecedor;
 import classes.Item;
-import classes.Livro;
+import classes.Peça;
 import classes.Venda;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -20,7 +20,7 @@ import javax.xml.bind.annotation.XmlElement;
 public class FormVenda extends javax.swing.JFrame {
     private Venda venda = null;
     private Fornecedor fornecedor = null;
-    private Livro livro = null;
+    private Peça peça = null;
     
     private float soma = 0;
     
@@ -342,12 +342,12 @@ public class FormVenda extends javax.swing.JFrame {
     }//GEN-LAST:event_btBuscarClienteActionPerformed
 
     private void btBuscarItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btBuscarItemActionPerformed
-        livro = FormPricipal.daoLivro.buscarLivro(tfCodLivro.getText());
-        if(livro != null)
+        peça = FormPricipal.daoPeça.buscarPeça(tfCodLivro.getText());
+        if(peça != null)
         {
-            lbTitulo.setText(livro.getTitulo());
-            lbEditora.setText(livro.getEditora());
-            lbValorUnitario.setText(Float.toString(livro.getValor()));
+            lbTitulo.setText(peça.getTitulo());
+            lbEditora.setText(peça.getEditora());
+            lbValorUnitario.setText(Float.toString(peça.getValor()));
             
         }
         else
@@ -368,12 +368,12 @@ public class FormVenda extends javax.swing.JFrame {
         int quantidade = Integer.parseInt(tfQuantidade.getText());
         if(quantidade >0)
         {
-            Item it = new Item(livro);
+            Item it = new Item(peça);
             it.setQuantidade(quantidade);
             it.calcularValorItem();
             
             venda.adicionarItem(it);
-            modelo.addRow(new Object[]{livro.getCodigo(),livro.getTitulo(),quantidade,livro.getValor(),it.getValorItem()});
+            modelo.addRow(new Object[]{peça.getCodigo(),peça.getTitulo(),quantidade,peça.getValor(),it.getValorItem()});
             soma += it.getValorItem();
             lbTotal.setText("R$ "+ Float.toString(soma));
             

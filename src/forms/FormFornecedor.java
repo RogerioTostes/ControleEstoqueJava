@@ -12,14 +12,14 @@ import javax.swing.JRadioButton;
 
 /**
  *
- * @author Tiago Oliveira
+ * @author Gerim
  */
-public class FormCliente extends javax.swing.JFrame {
+public class FormFornecedor extends javax.swing.JFrame {
 
     /**
      * Creates new form FormCliente
      */
-    public FormCliente() {
+    public FormFornecedor() {
         initComponents();
     }
 
@@ -299,7 +299,7 @@ public class FormCliente extends javax.swing.JFrame {
         
         // Salvar na base de dados
         FormPricipal.daoFornecedor.adicionarFornecedor(fornecedor);
-        JOptionPane.showMessageDialog(null, "Cliente cadastrado com sucesso", "Cadastro de Clientes", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Forncedor cadastrado com sucesso", "Cadastro de Forncedores", JOptionPane.INFORMATION_MESSAGE);
         
         limpar();
     }//GEN-LAST:event_btCadastrarActionPerformed
@@ -385,7 +385,7 @@ public class FormCliente extends javax.swing.JFrame {
         
         // Salvar na base de dados
         FormPricipal.daoFornecedor.alterarFornecedor(fornecedor);
-        JOptionPane.showMessageDialog(null, "Cliente alterado com sucesso", "Cadastro de Clientes", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Forncedor alterado com sucesso", "Cadastro de Forncedores", JOptionPane.INFORMATION_MESSAGE);
         
         limpar();
     }//GEN-LAST:event_btAtualizarActionPerformed
@@ -407,20 +407,21 @@ public class FormCliente extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FormCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormFornecedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FormCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormFornecedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FormCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormFornecedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FormCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormFornecedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FormCliente().setVisible(true);
+                new FormFornecedor().setVisible(true);
             }
         });
     }

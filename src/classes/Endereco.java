@@ -7,7 +7,7 @@ package classes;
 
 /**
  *
- * @author Tiago Oliveira
+ * @author Gerim
  */
 public class Endereco {
     

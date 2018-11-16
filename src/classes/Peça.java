@@ -7,9 +7,9 @@ package classes;
 
 /**
  *
- * @author Tiago Oliveira
+ * @author Gerim
  */
-public class Livro {
+public class Peça {
     
     private String codigo;
     private String titulo;
@@ -18,10 +18,10 @@ public class Livro {
     private float valor;
     private String dataPublicacao;
 
-    public Livro() {
+    public Peça() {
     }
 
-    public Livro(String codigo, String titulo, String editora, int estoque, float valor, String dataPublicacao) {
+    public Peça(String codigo, String titulo, String editora, int estoque, float valor, String dataPublicacao) {
         this.codigo = codigo;
         this.titulo = titulo;
         this.editora = editora;

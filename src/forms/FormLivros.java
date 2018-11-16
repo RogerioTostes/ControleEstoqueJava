@@ -5,7 +5,7 @@
  */
 package forms;
 
-import classes.Livro;
+import classes.Peça;
 import javax.swing.JOptionPane;
 
 /**
@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
  */
 public class FormLivros extends javax.swing.JFrame {
 
-    public Livro livro = null;
+    public Peça peça = null;
     
     
     public FormLivros() {
@@ -187,34 +187,34 @@ public class FormLivros extends javax.swing.JFrame {
             
         }
         
-        Livro livro = new Livro();
+        Peça peça = new Peça();
         int cont = 0; 
         
-        livro.setCodigo(tfCodigo.getText());
-        livro.setTitulo(tfTitulo.getText());
-        livro.setEditora(boxFronecedor.getSelectedItem().toString());
-        livro.setValor(Float.parseFloat(tfValor.getText()));
-        livro.setEstoque(Integer.parseInt(tfQuantidade.getText()));
-        livro.setDataPublicacao(tfDataPublicacao.getText());
+        this.peça.setCodigo(tfCodigo.getText());
+        this.peça.setTitulo(tfTitulo.getText());
+        this.peça.setEditora(boxFronecedor.getSelectedItem().toString());
+        this.peça.setValor(Float.parseFloat(tfValor.getText()));
+        this.peça.setEstoque(Integer.parseInt(tfQuantidade.getText()));
+        this.peça.setDataPublicacao(tfDataPublicacao.getText());
         
-        FormPricipal.daoLivro.adicionarLivro(livro);
+        FormPricipal.daoPeça.adicionarPeça(this.peça);
         JOptionPane.showMessageDialog(null, "Livro Cadastrado!" , "Cadastro de Livros", JOptionPane.INFORMATION_MESSAGE);
         limpar();
     }//GEN-LAST:event_btCadastrarActionPerformed
 
     public void cadastrarLivro(){
-        Livro livro = null;
+        Peça peça = null;
         for(int i = 1; i < 31; i++){
             
-            livro = new Livro();
-            livro.setCodigo(Integer.toString(1000+i));
-            livro.setTitulo("Livro com Titulo " + i);
-            livro.setEditora("Editora" + i+10);
-            livro.setEstoque((int) (Math.random() * 10) + 10 * i);
-            livro.setValor((50%i) + (i*10));
-            livro.setDataPublicacao(i+"/08/"+1990+i);
+            peça = new Peça();
+            peça.setCodigo(Integer.toString(1000+i));
+            peça.setTitulo("Livro com Titulo " + i);
+            peça.setEditora("Editora" + i+10);
+            peça.setEstoque((int) (Math.random() * 10) + 10 * i);
+            peça.setValor((50%i) + (i*10));
+            peça.setDataPublicacao(i+"/08/"+1990+i);
             
-            FormPricipal.daoLivro.adicionarLivro(livro);
+            FormPricipal.daoPeça.adicionarPeça(peça);
             
         }
     }
@@ -245,23 +245,23 @@ public class FormLivros extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
 
-        if(livro != null){
+        if(peça != null){
             
             btAtualizar.setEnabled(true);
             tfCodigo.setEnabled(false);
             
-            tfCodigo.setText(livro.getCodigo());
-            tfTitulo.setText(livro.getTitulo());
+            tfCodigo.setText(peça.getCodigo());
+            tfTitulo.setText(peça.getTitulo());
             
             for (int i = 0; i < boxFronecedor.getItemCount(); i++){
-                if(boxFronecedor.getItemAt(i).equals(livro.getEditora())){
+                if(boxFronecedor.getItemAt(i).equals(peça.getEditora())){
                 boxFronecedor.setSelectedItem(i);
                 }
             }
             
-            tfValor.setText(Float.toString(livro.getValor()));
-            tfQuantidade.setText(Integer.toString(livro.getEstoque()));
-            tfDataPublicacao.setText(livro.getDataPublicacao());
+            tfValor.setText(Float.toString(peça.getValor()));
+            tfQuantidade.setText(Integer.toString(peça.getEstoque()));
+            tfDataPublicacao.setText(peça.getDataPublicacao());
         }
         else{
         
@@ -273,16 +273,16 @@ public class FormLivros extends javax.swing.JFrame {
 
     private void btAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAtualizarActionPerformed
 
-        Livro livro = new Livro();
+        Peça peça = new Peça();
         
-        livro.setCodigo(tfCodigo.getText());
-        livro.setTitulo(tfTitulo.getText());
-        livro.setEditora(boxFronecedor.getSelectedItem().toString());
-        livro.setValor(Float.parseFloat(tfValor.getText()));
-        livro.setEstoque(Integer.parseInt(tfQuantidade.getText()));
-        livro.setDataPublicacao(tfDataPublicacao.getText());
+        peça.setCodigo(tfCodigo.getText());
+        peça.setTitulo(tfTitulo.getText());
+        peça.setEditora(boxFronecedor.getSelectedItem().toString());
+        peça.setValor(Float.parseFloat(tfValor.getText()));
+        peça.setEstoque(Integer.parseInt(tfQuantidade.getText()));
+        peça.setDataPublicacao(tfDataPublicacao.getText());
         
-        FormPricipal.daoLivro.alterarLivro(livro);
+        FormPricipal.daoPeça.alterarPeça(peça);
     }//GEN-LAST:event_btAtualizarActionPerformed
 
     /**

@@ -5,7 +5,7 @@
  */
 package forms;
 
-import classes.Livro;
+import classes.Peça;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -180,8 +180,8 @@ public class FormBuscarLivro extends javax.swing.JFrame {
         
         if(cbBuscarTodos.isSelected()){ // buscar todos os livros
             
-            List<Livro> lista = FormPricipal.daoLivro.todosLivros();
-            for(Livro l: lista){
+            List<Peça> lista = FormPricipal.daoPeça.todosPeça();
+            for(Peça l: lista){
                 incluirLivro(l);
             }
         }
@@ -190,7 +190,7 @@ public class FormBuscarLivro extends javax.swing.JFrame {
             if(tfCodigo.getText().trim().length() != 0){
                 
                 int codigo = Integer.parseInt(tfCodigo.getText());
-                Livro livro = FormPricipal.daoLivro.buscarLivro(Integer.toString(codigo));
+                Peça livro = FormPricipal.daoPeça.buscarPeça(Integer.toString(codigo));
                 if(livro != null){
                     incluirLivro(livro);
                 }
@@ -227,19 +227,19 @@ public class FormBuscarLivro extends javax.swing.JFrame {
     private void btExclurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btExclurActionPerformed
         // TODO add your handling code here:
         
-        Livro livro = getLivro();
-        FormPricipal.daoLivro.removerLivro(livro.getCodigo());
+        Peça livro = getLivro();
+        FormPricipal.daoPeça.removerPeça(livro.getCodigo());
         
         modelo.removeRow(jTable1.getSelectedRow());
     }//GEN-LAST:event_btExclurActionPerformed
 
     private void btEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEditarActionPerformed
 
-        Livro livro = getLivro();
+        Peça livro = getLivro();
         
         FormLivros frm = new FormLivros();
         frm.setVisible(true);
-        frm.livro = livro;
+        frm.peça = livro;
         this.dispose();
         
     }//GEN-LAST:event_btEditarActionPerformed
@@ -256,14 +256,14 @@ public class FormBuscarLivro extends javax.swing.JFrame {
         }
     }
     
-    private void incluirLivro(Livro livro){
+    private void incluirLivro(Peça livro){
         modelo.addRow(new Object[]{livro.getCodigo(), livro.getTitulo(), livro.getEditora(), livro.getEstoque(),
             livro.getValor(), livro.getDataPublicacao()});
         
     }
     
-    private Livro getLivro(){
-        Livro livro = new Livro();
+    private Peça getLivro(){
+        Peça livro = new Peça();
         int linha = jTable1.getSelectedRow();
         
         livro.setCodigo((String) modelo.getValueAt(linha, 0));

@@ -11,14 +11,14 @@ package classes;
  */
 public class Item {
     
-    private Livro livro;
+    private Peça livro;
     private int quantidade;
     private float valorItem;
 
     public Item() {
     }
 
-    public Item(Livro livro) {
+    public Item(Peça livro) {
         this.livro = livro;
     }
     
@@ -39,11 +39,11 @@ public class Item {
         return str;
     }
 
-    public Livro getLivro() {
+    public Peça getLivro() {
         return livro;
     }
 
-    public void setLivro(Livro livro) {
+    public void setLivro(Peça livro) {
         this.livro = livro;
     }
 

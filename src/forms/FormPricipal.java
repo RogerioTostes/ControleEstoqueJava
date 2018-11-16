@@ -6,7 +6,7 @@
 package forms;
 
 import dao.FornecedorDAO;
-import dao.LivroDAO;
+import dao.PeçaDAO;
 import dao.VendaDAO;
 
 /**
@@ -16,7 +16,7 @@ import dao.VendaDAO;
 public class FormPricipal extends javax.swing.JFrame {
     
     public static FornecedorDAO daoFornecedor = null;
-    public static LivroDAO daoLivro = null;
+    public static PeçaDAO daoPeça = null;
     public static VendaDAO daoVenda = null;
 
     /**
@@ -27,7 +27,7 @@ public class FormPricipal extends javax.swing.JFrame {
         this.setExtendedState(this.MAXIMIZED_BOTH);
         
         daoFornecedor = new FornecedorDAO();
-        daoLivro = new LivroDAO();
+        daoPeça = new PeçaDAO();
         daoVenda = new VendaDAO();
     }
 
@@ -198,12 +198,12 @@ public class FormPricipal extends javax.swing.JFrame {
 
     private void jMenuItemCadClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCadClienteActionPerformed
         // TODO add your handling code here:
-        new FormCliente().setVisible(true);
+        new FormFornecedor().setVisible(true);
     }//GEN-LAST:event_jMenuItemCadClienteActionPerformed
 
     private void jMenuItemConsClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemConsClientesActionPerformed
         // TODO add your handling code here:
-        new FormBuscarCliente().setVisible(true);
+        new FormBuscarFornecedor().setVisible(true);
     }//GEN-LAST:event_jMenuItemConsClientesActionPerformed
 
     private void jMenuItemCadProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCadProdutosActionPerformed
