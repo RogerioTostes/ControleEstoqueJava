@@ -15,7 +15,7 @@ import javax.xml.bind.annotation.XmlElement;
 
 /**
  *
- * @author alunoces
+ * @author Gerim
  */
 public class FormVenda extends javax.swing.JFrame {
     private Venda venda = null;

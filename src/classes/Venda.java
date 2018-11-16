@@ -12,7 +12,7 @@ import java.util.List;
 
 /**
  *
- * @author alunoces
+ * @author Gerim
  */
 public class Venda {
     
@@ -73,8 +73,8 @@ public class Venda {
         String str = "";
                str += "--------- Dados da Venda Nº "+ numero + " ---------";
         str += "\nData Venda: "+ getData();
-        str += "\nCPF do Cliente: "+ fornecedor.getCpf();
-        str += "\nNome do Cliente: "+ fornecedor.getNome();
+        str += "\nCNPJ do Fornecedor: "+ fornecedor.getCnpj();
+        str += "\nNome do Fornecedor: "+ fornecedor.getNome();
         for(Item i: lista)
         {
             str += i.toString();

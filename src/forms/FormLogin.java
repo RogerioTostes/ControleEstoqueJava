@@ -9,7 +9,7 @@ import classes.Usuario;
 
 /**
  *
- * @author alunoces
+ * @author Gerim
  */
 public class FormLogin extends javax.swing.JFrame {
 

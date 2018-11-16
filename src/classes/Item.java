@@ -7,7 +7,7 @@ package classes;
 
 /**
  *
- * @author alunoces
+ * @author Gerim
  */
 public class Item {
     

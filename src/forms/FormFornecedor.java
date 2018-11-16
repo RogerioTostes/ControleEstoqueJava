@@ -34,7 +34,7 @@ public class FormFornecedor extends javax.swing.JFrame {
 
         bgEstadoCivil = new javax.swing.ButtonGroup();
         lbCpf = new javax.swing.JLabel();
-        tfCpf = new javax.swing.JFormattedTextField();
+        tfCnpj = new javax.swing.JFormattedTextField();
         lbNome = new javax.swing.JLabel();
         tfNome = new javax.swing.JTextField();
         abas = new javax.swing.JTabbedPane();
@@ -43,12 +43,8 @@ public class FormFornecedor extends javax.swing.JFrame {
         tfTelefone = new javax.swing.JFormattedTextField();
         lbEmail = new javax.swing.JLabel();
         tfEmail = new javax.swing.JTextField();
-        painelEstado = new javax.swing.JPanel();
-        rdSolteiro = new javax.swing.JRadioButton();
-        rdCasado = new javax.swing.JRadioButton();
-        rdDivorciado = new javax.swing.JRadioButton();
-        rdUniao = new javax.swing.JRadioButton();
-        rdViuvo = new javax.swing.JRadioButton();
+        lbEmail1 = new javax.swing.JLabel();
+        tfInsc = new javax.swing.JTextField();
         painelEndereço = new javax.swing.JPanel();
         tfLogradouro = new javax.swing.JTextField();
         lbLogradouro = new javax.swing.JLabel();
@@ -67,26 +63,33 @@ public class FormFornecedor extends javax.swing.JFrame {
         btBuscar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Cadastro de Fornecedor");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lbCpf.setText("CPF:");
+        lbCpf.setText("CNPJ");
         getContentPane().add(lbCpf, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
 
         try {
-            tfCpf.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+            tfCnpj.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##.###.###/####-##")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        tfCpf.addActionListener(new java.awt.event.ActionListener() {
+        tfCnpj.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfCpfActionPerformed(evt);
+                tfCnpjActionPerformed(evt);
             }
         });
-        getContentPane().add(tfCpf, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 112, -1));
+        getContentPane().add(tfCnpj, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 150, -1));
 
         lbNome.setText("Nome Completo:");
-        getContentPane().add(lbNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, -1, -1));
-        getContentPane().add(tfNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 50, 330, -1));
+        getContentPane().add(lbNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, -1, -1));
+
+        tfNome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfNomeActionPerformed(evt);
+            }
+        });
+        getContentPane().add(tfNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 330, -1));
 
         lbTelefone.setText("Telefone:");
 
@@ -98,62 +101,7 @@ public class FormFornecedor extends javax.swing.JFrame {
 
         lbEmail.setText("Email:");
 
-        painelEstado.setBorder(javax.swing.BorderFactory.createTitledBorder("Estado Civil"));
-
-        bgEstadoCivil.add(rdSolteiro);
-        rdSolteiro.setText("Solteiro");
-        rdSolteiro.setActionCommand("Solteiro");
-
-        bgEstadoCivil.add(rdCasado);
-        rdCasado.setText("Casado");
-        rdCasado.setActionCommand("Casado");
-
-        bgEstadoCivil.add(rdDivorciado);
-        rdDivorciado.setText("Divorciado");
-        rdDivorciado.setActionCommand("Divorciado");
-
-        bgEstadoCivil.add(rdUniao);
-        rdUniao.setText("União Estável");
-        rdUniao.setActionCommand("União Estável");
-        rdUniao.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rdUniaoActionPerformed(evt);
-            }
-        });
-
-        bgEstadoCivil.add(rdViuvo);
-        rdViuvo.setText("Viúvo");
-        rdViuvo.setActionCommand("Viúvo");
-
-        javax.swing.GroupLayout painelEstadoLayout = new javax.swing.GroupLayout(painelEstado);
-        painelEstado.setLayout(painelEstadoLayout);
-        painelEstadoLayout.setHorizontalGroup(
-            painelEstadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(painelEstadoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(rdSolteiro)
-                .addGap(18, 18, 18)
-                .addComponent(rdCasado)
-                .addGap(18, 18, 18)
-                .addComponent(rdDivorciado)
-                .addGap(18, 18, 18)
-                .addComponent(rdUniao)
-                .addGap(18, 18, 18)
-                .addComponent(rdViuvo)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        painelEstadoLayout.setVerticalGroup(
-            painelEstadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(painelEstadoLayout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addGroup(painelEstadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(rdSolteiro)
-                    .addComponent(rdCasado)
-                    .addComponent(rdDivorciado)
-                    .addComponent(rdUniao)
-                    .addComponent(rdViuvo))
-                .addContainerGap(42, Short.MAX_VALUE))
-        );
+        lbEmail1.setText("Incs.Mun");
 
         javax.swing.GroupLayout PainelDadosLayout = new javax.swing.GroupLayout(PainelDados);
         PainelDados.setLayout(PainelDadosLayout);
@@ -162,6 +110,8 @@ public class FormFornecedor extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PainelDadosLayout.createSequentialGroup()
                 .addContainerGap(124, Short.MAX_VALUE)
                 .addGroup(PainelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbEmail1)
+                    .addComponent(tfInsc, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(PainelDadosLayout.createSequentialGroup()
                         .addGroup(PainelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lbTelefone)
@@ -169,9 +119,8 @@ public class FormFornecedor extends javax.swing.JFrame {
                         .addGap(44, 44, 44)
                         .addGroup(PainelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lbEmail)
-                            .addComponent(tfEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(painelEstado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(83, 83, 83))
+                            .addComponent(tfEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(229, 229, 229))
         );
         PainelDadosLayout.setVerticalGroup(
             PainelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -184,8 +133,11 @@ public class FormFornecedor extends javax.swing.JFrame {
                 .addGroup(PainelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tfTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tfEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                .addComponent(painelEstado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(39, 39, 39)
+                .addComponent(lbEmail1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tfInsc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(58, Short.MAX_VALUE))
         );
 
         abas.addTab("Dados Pessoais", PainelDados);
@@ -232,7 +184,7 @@ public class FormFornecedor extends javax.swing.JFrame {
         });
         getContentPane().add(btCadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 350, 110, 40));
 
-        btAtualizar.setText("Atulizar");
+        btAtualizar.setText("Atualizar");
         btAtualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btAtualizarActionPerformed(evt);
@@ -262,68 +214,62 @@ public class FormFornecedor extends javax.swing.JFrame {
                 btBuscarActionPerformed(evt);
             }
         });
-        getContentPane().add(btBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 30, 110, 50));
+        getContentPane().add(btBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 30, 110, 50));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void rdUniaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdUniaoActionPerformed
+    private void tfCnpjActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfCnpjActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_rdUniaoActionPerformed
+    }//GEN-LAST:event_tfCnpjActionPerformed
 
-    private void tfCpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfCpfActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tfCpfActionPerformed
 
-    
     private void btCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCadastrarActionPerformed
-        
+
         // Criar o objeto e preenche-lo
         Fornecedor fornecedor = new Fornecedor();
-        
+
         // Pegar os dados da tela
-        fornecedor.setCpf(tfCpf.getText());
+        fornecedor.setCnpj(tfCnpj.getText());
         fornecedor.setNome(tfNome.getText());
         fornecedor.setTelefone(tfTelefone.getText());
         fornecedor.setEmail(tfEmail.getText());
-        fornecedor.setEstadoCivil(bgEstadoCivil.getSelection().getActionCommand());
-        
+        fornecedor.setInsc(tfInsc.getText());
+
         fornecedor.getEndereco().setLogradouro(tfLogradouro.getText());
         fornecedor.getEndereco().setComplemento(tfComplemento.getText());
         fornecedor.getEndereco().setCidade(tfCidade.getText());
         fornecedor.getEndereco().setEstado(cbEstado.getSelectedItem().toString());
         fornecedor.getEndereco().setCep(tfCep.getText());
-        
-        
-        
+
         // Salvar na base de dados
         FormPricipal.daoFornecedor.adicionarFornecedor(fornecedor);
         JOptionPane.showMessageDialog(null, "Forncedor cadastrado com sucesso", "Cadastro de Forncedores", JOptionPane.INFORMATION_MESSAGE);
-        
+
         limpar();
     }//GEN-LAST:event_btCadastrarActionPerformed
 
-    private void limpar(){
-    
-        tfCpf.setText("");
+    private void limpar() {
+
+        tfCnpj.setText("");
         tfNome.setText("");
         tfTelefone.setText("");
         tfEmail.setText("");
-        bgEstadoCivil.clearSelection();
-        
+      tfInsc.setText("");
+
         abas.setSelectedIndex(0);
-        
+
         tfLogradouro.setText("");
         tfComplemento.setText("");
         tfCidade.setText("");
         cbEstado.setSelectedIndex(-1);
         tfCep.setText("");
-        
-        tfCpf.requestFocus();
-        
+
+        tfCnpj.requestFocus();
+
     }
-    
+
     private void btLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLimparActionPerformed
         // TODO add your handling code here:
         limpar();
@@ -331,31 +277,33 @@ public class FormFornecedor extends javax.swing.JFrame {
 
     private void btBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btBuscarActionPerformed
         // TODO add your handling code here:
-        String CPF = tfCpf.getText();
+        String CPF = tfCnpj.getText();
         Fornecedor fornecedor = FormPricipal.daoFornecedor.buscarFornecedor(CPF);
         tfNome.setText(fornecedor.getNome());
         tfTelefone.setText(fornecedor.getTelefone());
         tfEmail.setText(fornecedor.getEmail());
+        tfInsc.setText(fornecedor.getInsc());
         // setar o estado civil nos campos radio
-        JRadioButton radio;
-        Enumeration en = bgEstadoCivil.getElements();
-        while(en.hasMoreElements()){
-            radio = (JRadioButton) en.nextElement();
-            if(radio.getText().equals(fornecedor.getEstadoCivil()))
-                radio.setSelected(true);
-        }
-        
+   //     JRadioButton radio;
+     //   Enumeration en = bgEstadoCivil.getElements();
+    //    while (en.hasMoreElements()) {
+    //        radio = (JRadioButton) en.nextElement();
+    //        if (radio.getText().equals(fornecedor.getEstadoCivil())) {
+     //           radio.setSelected(true);
+    //        }
+    //    }
+
         tfLogradouro.setText(fornecedor.getEndereco().getLogradouro());
         tfComplemento.setText(fornecedor.getEndereco().getComplemento());
         tfCidade.setText(fornecedor.getEndereco().getCidade());
         // setar cep no combobox
-        for (int i = 0; i < cbEstado.getItemCount(); i++){
-            if(cbEstado.getItemAt(i).equals(fornecedor.getEndereco().getEstado())){
+        for (int i = 0; i < cbEstado.getItemCount(); i++) {
+            if (cbEstado.getItemAt(i).equals(fornecedor.getEndereco().getEstado())) {
                 cbEstado.setSelectedItem(i);
             }
         }
         tfCep.setText(fornecedor.getEndereco().getCep());
-        
+
     }//GEN-LAST:event_btBuscarActionPerformed
 
     private void btSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSairActionPerformed
@@ -367,28 +315,30 @@ public class FormFornecedor extends javax.swing.JFrame {
         // TODO add your handling code here:
         // Criar o objeto e preenche-lo
         Fornecedor fornecedor = new Fornecedor();
-        
+
         // Pegar os dados da tela
-        fornecedor.setCpf(tfCpf.getText());
+        fornecedor.setCnpj(tfCnpj.getText());
         fornecedor.setNome(tfNome.getText());
         fornecedor.setTelefone(tfTelefone.getText());
         fornecedor.setEmail(tfEmail.getText());
-        fornecedor.setEstadoCivil(bgEstadoCivil.getSelection().getActionCommand());
-        
+        fornecedor.setInsc(tfInsc.getText());
+
         fornecedor.getEndereco().setLogradouro(tfLogradouro.getText());
         fornecedor.getEndereco().setComplemento(tfComplemento.getText());
         fornecedor.getEndereco().setCidade(tfCidade.getText());
         fornecedor.getEndereco().setEstado(cbEstado.getSelectedItem().toString());
         fornecedor.getEndereco().setCep(tfCep.getText());
-        
-        
-        
+
         // Salvar na base de dados
         FormPricipal.daoFornecedor.alterarFornecedor(fornecedor);
         JOptionPane.showMessageDialog(null, "Forncedor alterado com sucesso", "Cadastro de Forncedores", JOptionPane.INFORMATION_MESSAGE);
-        
+
         limpar();
     }//GEN-LAST:event_btAtualizarActionPerformed
+
+    private void tfNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfNomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfNomeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -441,22 +391,18 @@ public class FormFornecedor extends javax.swing.JFrame {
     private javax.swing.JLabel lbComplemento;
     private javax.swing.JLabel lbCpf;
     private javax.swing.JLabel lbEmail;
+    private javax.swing.JLabel lbEmail1;
     private javax.swing.JLabel lbEstado;
     private javax.swing.JLabel lbLogradouro;
     private javax.swing.JLabel lbNome;
     private javax.swing.JLabel lbTelefone;
     private javax.swing.JPanel painelEndereço;
-    private javax.swing.JPanel painelEstado;
-    private javax.swing.JRadioButton rdCasado;
-    private javax.swing.JRadioButton rdDivorciado;
-    private javax.swing.JRadioButton rdSolteiro;
-    private javax.swing.JRadioButton rdUniao;
-    private javax.swing.JRadioButton rdViuvo;
     private javax.swing.JFormattedTextField tfCep;
     private javax.swing.JTextField tfCidade;
+    private javax.swing.JFormattedTextField tfCnpj;
     private javax.swing.JTextField tfComplemento;
-    private javax.swing.JFormattedTextField tfCpf;
     private javax.swing.JTextField tfEmail;
+    private javax.swing.JTextField tfInsc;
     private javax.swing.JTextField tfLogradouro;
     private javax.swing.JTextField tfNome;
     private javax.swing.JFormattedTextField tfTelefone;

@@ -10,40 +10,40 @@ package classes;
  * @author Gerim
  */
 public class Fornecedor {
-    
+
     private String nome;
-    private String cpf;
-    private String estadoCivil;
+    private String cnpj;
     private String telefone;
     private String email;
     private Endereco endereco;
+    private String insc;
 
-    public Fornecedor(String nome, String cpf, String estadoCivil, String telefone, String email, Endereco endereco) {
+    public Fornecedor(String nome, String cnpj, String telefone, String email, Endereco endereco, String insc) {
         this.nome = nome;
-        this.cpf = cpf;
-        this.estadoCivil = estadoCivil;
+        this.cnpj = cnpj;
         this.telefone = telefone;
         this.email = email;
         this.endereco = endereco;
+        this.insc = insc;
     }
 
     public Fornecedor() {
         endereco = new Endereco();
     }
-    
-    public String toString(){
-    
-        String str = "CPF:  " + cpf;
+
+    public String toString() {
+
+        String str = "CNPJ:  " + cnpj;
         str += "\n Nome: " + nome;
         str += "\n Email: " + email;
         str += "\n Telefone: " + telefone;
-        str += "\n Estado Civil: " + estadoCivil;
+        str += "\n Inscriçao Municipal: " + insc;
         str += "\n -------- Endereço --------";
         str += "\n Logradouro: " + endereco.getLogradouro();
         str += "\n Cidade: " + endereco.getCidade();
         str += "\n Estado: " + endereco.getEstado();
         str += "\n CEP: " + endereco.getCep();
-        
+
         return str;
     }
 
@@ -55,20 +55,12 @@ public class Fornecedor {
         this.nome = nome;
     }
 
-    public String getCpf() {
-        return cpf;
+    public String getCnpj() {
+        return cnpj;
     }
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
-
-    public String getEstadoCivil() {
-        return estadoCivil;
-    }
-
-    public void setEstadoCivil(String estadoCivil) {
-        this.estadoCivil = estadoCivil;
+    public void setCnpj(String cnpj) {
+        this.cnpj = cnpj;
     }
 
     public String getTelefone() {
@@ -94,5 +86,13 @@ public class Fornecedor {
     public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
     }
-    
+
+    public String getInsc() {
+        return insc;
+    }
+
+    public void setInsc(String insc) {
+        this.insc = insc;
+    }
+
 }

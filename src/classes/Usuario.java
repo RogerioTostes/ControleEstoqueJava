@@ -7,7 +7,7 @@ package classes;
 
 /**
  *
- * @author professor
+ * @author Gerim
  */
 public class Usuario {
     private String matricula;

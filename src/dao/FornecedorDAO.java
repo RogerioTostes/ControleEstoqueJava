@@ -26,9 +26,9 @@ public class FornecedorDAO {
         lista.add(fornecedor);
     }
     
-    public void removerFornecedor(String cpf){
+    public void removerFornecedor(String cnpj){
         
-        Fornecedor forn = this.buscarFornecedor(cpf);
+        Fornecedor forn = this.buscarFornecedor(cnpj);
         if(forn != null){
             lista.remove(forn);
         }
@@ -36,16 +36,16 @@ public class FornecedorDAO {
     
     public void alterarFornecedor(Fornecedor fornecedor){
         
-        Fornecedor forn = buscarFornecedor(fornecedor.getCpf());
+        Fornecedor forn = buscarFornecedor(fornecedor.getCnpj());
         int ind = lista.indexOf(forn);
         lista.set(ind,fornecedor);
     }
     
-    public Fornecedor buscarFornecedor(String cpf){
+    public Fornecedor buscarFornecedor(String cnpj){
         
         Fornecedor forn = null;
         for (Fornecedor fornecedor : lista){
-            if(fornecedor.getCpf().equals(cpf))
+            if(fornecedor.getCnpj().equals(cnpj))
                 forn = fornecedor;
         }
         return forn;

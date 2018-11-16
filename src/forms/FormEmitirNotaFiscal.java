@@ -16,7 +16,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author alunoces
+ * @author Gerim
  */
 public class FormEmitirNotaFiscal extends javax.swing.JFrame {
 
@@ -161,7 +161,7 @@ public class FormEmitirNotaFiscal extends javax.swing.JFrame {
 
     private void btEmitirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEmitirActionPerformed
         // TODO add your handling code here:
-        File arq = new File("F:\\DOCUMENTOS\\ProjetoLivrariaNEW\\src\\NotasFiscais\\NotaFiscal_" + jTextField1.getText() + ".txt");
+        File arq = new File("C:\\Users\\Gerim\\Desktop\\ControleEstoqueJava\\src\\NotasFiscais\\NotaFiscal_" + jTextField1.getText() + ".txt");
 
         if (!arq.exists()) {
             try {

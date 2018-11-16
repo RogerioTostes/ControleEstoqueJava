@@ -64,7 +64,7 @@ public class FormPricipal extends javax.swing.JFrame {
         jMenuItemSobre = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Sistema Eletrônico de Livraria");
+        setTitle("Sistema Controle de Estoque");
         setExtendedState(6);
         setResizable(false);
 
@@ -78,7 +78,7 @@ public class FormPricipal extends javax.swing.JFrame {
 
         jMenuCadastro.setText("Cadastros");
 
-        jMenuItemCadCliente.setText("Clientes");
+        jMenuItemCadCliente.setText("Fornecedores");
         jMenuItemCadCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItemCadClienteActionPerformed(evt);
@@ -86,7 +86,7 @@ public class FormPricipal extends javax.swing.JFrame {
         });
         jMenuCadastro.add(jMenuItemCadCliente);
 
-        jMenuItemCadProdutos.setText("Livros");
+        jMenuItemCadProdutos.setText("Peças");
         jMenuItemCadProdutos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItemCadProdutosActionPerformed(evt);
@@ -107,7 +107,7 @@ public class FormPricipal extends javax.swing.JFrame {
 
         jMenuConsulta.setText("Consultas");
 
-        jMenuItemConsClientes.setText("Clientes");
+        jMenuItemConsClientes.setText("Fornecedores");
         jMenuItemConsClientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItemConsClientesActionPerformed(evt);
@@ -115,7 +115,7 @@ public class FormPricipal extends javax.swing.JFrame {
         });
         jMenuConsulta.add(jMenuItemConsClientes);
 
-        jMenuItemConsProdutos.setText("Livros");
+        jMenuItemConsProdutos.setText("Peças");
         jMenuItemConsProdutos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItemConsProdutosActionPerformed(evt);
@@ -208,12 +208,12 @@ public class FormPricipal extends javax.swing.JFrame {
 
     private void jMenuItemCadProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCadProdutosActionPerformed
         // TODO add your handling code here:
-        new FormLivros().setVisible(true);
+        new FormPeças().setVisible(true);
     }//GEN-LAST:event_jMenuItemCadProdutosActionPerformed
 
     private void jMenuItemConsProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemConsProdutosActionPerformed
         // TODO add your handling code here:
-        new FormBuscarLivro().setVisible(true);
+        new FormBuscarPeças().setVisible(true);
     }//GEN-LAST:event_jMenuItemConsProdutosActionPerformed
 
     private void jMenuVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuVendaActionPerformed
