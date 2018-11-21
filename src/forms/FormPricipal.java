@@ -5,6 +5,7 @@
  */
 package forms;
 
+import dao.ClienteDAO;
 import dao.FornecedorDAO;
 import dao.PeçaDAO;
 import dao.VendaDAO;
@@ -18,6 +19,7 @@ public class FormPricipal extends javax.swing.JFrame {
     public static FornecedorDAO daoFornecedor = null;
     public static PeçaDAO daoPeça = null;
     public static VendaDAO daoVenda = null;
+     public static ClienteDAO daoCliente = null;
 
     /**
      * Creates new form formPricipal
@@ -29,6 +31,7 @@ public class FormPricipal extends javax.swing.JFrame {
         daoFornecedor = new FornecedorDAO();
         daoPeça = new PeçaDAO();
         daoVenda = new VendaDAO();
+        daoCliente = new ClienteDAO();
     }
 
     /**
@@ -46,11 +49,13 @@ public class FormPricipal extends javax.swing.JFrame {
         jMenuCadastro = new javax.swing.JMenu();
         jMenuItemCadCliente = new javax.swing.JMenuItem();
         jMenuItemCadProdutos = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         jMenuItemSair = new javax.swing.JMenuItem();
         jMenuConsulta = new javax.swing.JMenu();
         jMenuItemConsClientes = new javax.swing.JMenuItem();
         jMenuItemConsProdutos = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
         jMenuCompras = new javax.swing.JMenu();
         jMenuItemDia = new javax.swing.JMenuItem();
         jMenuItemMes = new javax.swing.JMenuItem();
@@ -93,6 +98,14 @@ public class FormPricipal extends javax.swing.JFrame {
             }
         });
         jMenuCadastro.add(jMenuItemCadProdutos);
+
+        jMenuItem1.setText("Clientes");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenuCadastro.add(jMenuItem1);
         jMenuCadastro.add(jSeparator1);
 
         jMenuItemSair.setText("Sair");
@@ -122,6 +135,14 @@ public class FormPricipal extends javax.swing.JFrame {
             }
         });
         jMenuConsulta.add(jMenuItemConsProdutos);
+
+        jMenuItem2.setText("Clientes");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenuConsulta.add(jMenuItem2);
 
         jMenuCompras.setText("Compras");
 
@@ -230,6 +251,16 @@ public class FormPricipal extends javax.swing.JFrame {
         new FormEmitirNotaFiscal().setVisible(true);
     }//GEN-LAST:event_jMenuItemEmitirNotaActionPerformed
 
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+         new FormCliente().setVisible(true);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+        new FormBuscarCliente().setVisible(true);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -272,6 +303,8 @@ public class FormPricipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenuCadastro;
     private javax.swing.JMenu jMenuCompras;
     private javax.swing.JMenu jMenuConsulta;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItemAjuda;
     private javax.swing.JMenuItem jMenuItemAno;
     private javax.swing.JMenuItem jMenuItemCadCliente;
