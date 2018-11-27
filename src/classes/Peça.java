@@ -12,32 +12,32 @@ package classes;
 public class Peça {
     
     private String codigo;
-    private String titulo;
-    private String editora;
+    private String descricao;
+    private String fornecedor;
     private int estoque;
     private float valor;
-    private String dataPublicacao;
+    private String dataCadastro;
 
     public Peça() {
     }
 
-    public Peça(String codigo, String titulo, String editora, int estoque, float valor, String dataPublicacao) {
+    public Peça(String codigo, String descricao, String fornecedor, int estoque, float valor, String dataCadastro) {
         this.codigo = codigo;
-        this.titulo = titulo;
-        this.editora = editora;
+        this.descricao = descricao;
+        this.fornecedor = fornecedor;
         this.estoque = estoque;
         this.valor = valor;
-        this.dataPublicacao = dataPublicacao;
+        this.dataCadastro = dataCadastro;
     }
 
     public String toString(){
     
         String str = "Código: " + codigo;
-        str += "\n Título: " + titulo;
-        str += "\n Editora: " + editora;
-        str += "\n Estoque: " + Integer.toString(estoque);
+        str += "\n Descricao: " + descricao;
+        str += "\n Fornecedor: " + fornecedor;
+        str += "\n Quantidade em estoque: " + Integer.toString(estoque);
         str += "\n Valor: " + Float.toString(valor);
-        str += "\n Data de Publicação: " + dataPublicacao;
+        str += "\n Cadastrado em: " + dataCadastro;
         
         return str;
     }
@@ -50,20 +50,20 @@ public class Peça {
         this.codigo = codigo;
     }
 
-    public String getTitulo() {
-        return titulo;
+    public String getDescricao() {
+        return descricao;
     }
 
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
-    public String getEditora() {
-        return editora;
+    public String getFornecedor() {
+        return fornecedor;
     }
 
-    public void setEditora(String editora) {
-        this.editora = editora;
+    public void setFornecedor(String fornecedor) {
+        this.fornecedor = fornecedor;
     }
 
     public int getEstoque() {
@@ -82,12 +82,12 @@ public class Peça {
         this.valor = valor;
     }
 
-    public String getDataPublicacao() {
-        return dataPublicacao;
+    public String getDataCadastro() {
+        return dataCadastro;
     }
 
-    public void setDataPublicacao(String dataPublicacao) {
-        this.dataPublicacao = dataPublicacao;
+    public void setDataCadastro(String dataCadastro) {
+        this.dataCadastro = dataCadastro;
     }
     
 }

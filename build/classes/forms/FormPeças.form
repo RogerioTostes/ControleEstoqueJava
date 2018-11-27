@@ -4,9 +4,6 @@
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="2"/>
     <Property name="title" type="java.lang.String" value="Cadastro de Livros (Acervo)"/>
-    <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[90, 70]"/>
-    </Property>
     <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
       <Dimension value="[90, 70]"/>
     </Property>
@@ -44,7 +41,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JTextField" name="tfTitulo">
+    <Component class="javax.swing.JTextField" name="tfDescricao">
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="230" y="170" width="310" height="-1"/>
@@ -63,7 +60,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lbTitulo">
       <Properties>
-        <Property name="text" type="java.lang.String" value="T&#xed;tulo"/>
+        <Property name="text" type="java.lang.String" value="Descri&#xe7;&#xe3;o"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -71,17 +68,19 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JComboBox" name="boxFronecedor">
+    <Component class="javax.swing.JComboBox" name="boxFornecedor">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="3">
-            <StringItem index="0" value="Editora Vozes"/>
-            <StringItem index="1" value="Editora Arqueiro"/>
-            <StringItem index="2" value="Editora Rocco"/>
+            <StringItem index="0" value="Pe&#xe7;as Aguiar"/>
+            <StringItem index="1" value="SP Pe&#xe7;as"/>
+            <StringItem index="2" value="Auto Pe&#xe7;as"/>
           </StringArray>
         </Property>
-        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="boxFornecedorActionPerformed"/>
+      </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
@@ -115,7 +114,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JFormattedTextField" name="tfDataPublicacao">
+    <Component class="javax.swing.JFormattedTextField" name="tfDataCadastro">
       <Properties>
         <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
           <Format format="##/##/####" subtype="-1" type="5"/>
@@ -149,7 +148,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lbData">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Data de Publica&#xe7;&#xe3;o"/>
+        <Property name="text" type="java.lang.String" value="Cadastrado em"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">

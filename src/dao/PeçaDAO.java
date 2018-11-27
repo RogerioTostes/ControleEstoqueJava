@@ -54,6 +54,7 @@ public class PeçaDAO {
         return peça;
     }
     
+
     public List<Peça> todosPeça(){
     
         return lista;

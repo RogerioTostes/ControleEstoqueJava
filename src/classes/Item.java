@@ -11,40 +11,40 @@ package classes;
  */
 public class Item {
     
-    private Peça livro;
+    private Peça peca;
     private int quantidade;
     private float valorItem;
 
     public Item() {
     }
 
-    public Item(Peça livro) {
-        this.livro = livro;
+    public Item(Peça peca) {
+        this.peca = peca;
     }
     
     public void calcularValorItem(){
     
-        this.valorItem = quantidade * livro.getValor();
+        this.valorItem = quantidade * peca.getValor();
     }
     
     public String toString()
     {
         String str = "";
-        str += "--------- Livro de codigo "+ livro.getCodigo()+" ----------";
-        str += "\nTitulo: "+ livro.getTitulo();
-        str += "\nEditora: "+ livro.getEditora();
-        str += "\nValor Unitário: "+ livro.getValor();
+        str += "--------- Código da Peça "+ peca.getCodigo()+" ----------";
+        str += "\nDescrição: "+ peca.getDescricao();
+        str += "\nEditora: "+ peca.getFornecedor();
+        str += "\nValor Unitário: "+ peca.getValor();
         str += "\nQuantidade = : "+ quantidade + " - Valor Item: R$" + valorItem;
         
         return str;
     }
 
-    public Peça getLivro() {
-        return livro;
+    public Peça getPeca() {
+        return peca;
     }
 
-    public void setLivro(Peça livro) {
-        this.livro = livro;
+    public void setPeca(Peça peca) {
+        this.peca = peca;
     }
 
     public int getQuantidade() {

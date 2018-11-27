@@ -50,6 +50,15 @@ public class FornecedorDAO {
         }
         return forn;
     }
+     public Fornecedor buscarFornecedorNome(String nome){
+        
+        Fornecedor forn = null;
+        for (Fornecedor fornecedor : lista){
+            if(fornecedor.getNome().equals(nome))
+                forn = fornecedor;
+        }
+        return forn;
+    }
     
     public List<Fornecedor> todosFornecedores(){
     

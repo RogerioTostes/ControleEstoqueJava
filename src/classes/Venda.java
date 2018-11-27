@@ -40,7 +40,7 @@ public class Venda {
         Item it = null;
         for(Item i: lista)
         {
-            if(codigo == Integer.parseInt(i.getLivro().getCodigo()))
+            if(codigo == Integer.parseInt(i.getPeca().getCodigo()))
             {
                 it = i;
             }

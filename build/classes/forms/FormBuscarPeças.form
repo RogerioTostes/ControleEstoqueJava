@@ -36,9 +36,9 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="tfCodigo" min="-2" pref="100" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
-                                  <Component id="btBuscarLivro" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btBuscarPeca" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
-                                  <Component id="cbBuscarTodos" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cbBuscarTodas" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" attributes="0">
@@ -65,8 +65,8 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="tfCodigo" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btBuscarLivro" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="cbBuscarTodos" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btBuscarPeca" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cbBuscarTodas" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jScrollPane2" min="-2" pref="366" max="-2" attributes="0"/>
@@ -84,20 +84,20 @@
   <SubComponents>
     <Component class="javax.swing.JTextField" name="tfCodigo">
     </Component>
-    <Component class="javax.swing.JButton" name="btBuscarLivro">
+    <Component class="javax.swing.JButton" name="btBuscarPeca">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Buscar Livro"/>
+        <Property name="text" type="java.lang.String" value="Buscar Pe&#xe7;a"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btBuscarLivroActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btBuscarPecaActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="cbBuscarTodos">
+    <Component class="javax.swing.JCheckBox" name="cbBuscarTodas">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Buscar todos"/>
+        <Property name="text" type="java.lang.String" value="Buscar todas"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbBuscarTodosActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbBuscarTodasActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lbCodigo">
@@ -143,11 +143,11 @@
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
               <Table columnCount="6" rowCount="0">
                 <Column editable="true" title="Cod." type="java.lang.String"/>
-                <Column editable="true" title="T&#xed;tulo" type="java.lang.String"/>
+                <Column editable="true" title="Descri&#xe7;&#xe3;o" type="java.lang.String"/>
                 <Column editable="true" title="Fornecedor" type="java.lang.String"/>
                 <Column editable="true" title="Qtde" type="java.lang.Integer"/>
                 <Column editable="true" title="Valor Unit&#xe1;rio" type="java.lang.Float"/>
-                <Column editable="true" title="Data de Publica&#xe7;&#xe3;o" type="java.lang.String"/>
+                <Column editable="true" title="Cadastrado em" type="java.lang.String"/>
               </Table>
             </Property>
             <Property name="autoResizeMode" type="int" value="0"/>

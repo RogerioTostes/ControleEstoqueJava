@@ -34,8 +34,8 @@ public class FormBuscarPeças extends javax.swing.JFrame {
     private void initComponents() {
 
         tfCodigo = new javax.swing.JTextField();
-        btBuscarLivro = new javax.swing.JButton();
-        cbBuscarTodos = new javax.swing.JCheckBox();
+        btBuscarPeca = new javax.swing.JButton();
+        cbBuscarTodas = new javax.swing.JCheckBox();
         lbCodigo = new javax.swing.JLabel();
         btEditar = new javax.swing.JButton();
         btSair = new javax.swing.JButton();
@@ -46,17 +46,17 @@ public class FormBuscarPeças extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Consulta de Livros em Acervo");
 
-        btBuscarLivro.setText("Buscar Livro");
-        btBuscarLivro.addActionListener(new java.awt.event.ActionListener() {
+        btBuscarPeca.setText("Buscar Peça");
+        btBuscarPeca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btBuscarLivroActionPerformed(evt);
+                btBuscarPecaActionPerformed(evt);
             }
         });
 
-        cbBuscarTodos.setText("Buscar todos");
-        cbBuscarTodos.addActionListener(new java.awt.event.ActionListener() {
+        cbBuscarTodas.setText("Buscar todas");
+        cbBuscarTodas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbBuscarTodosActionPerformed(evt);
+                cbBuscarTodasActionPerformed(evt);
             }
         });
 
@@ -90,7 +90,7 @@ public class FormBuscarPeças extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Cod.", "Título", "Fornecedor", "Qtde", "Valor Unitário", "Data de Publicação"
+                "Cod.", "Descrição", "Fornecedor", "Qtde", "Valor Unitário", "Cadastrado em"
             }
         ) {
             Class[] types = new Class [] {
@@ -137,9 +137,9 @@ public class FormBuscarPeças extends javax.swing.JFrame {
                                 .addGroup(layout.createSequentialGroup()
                                     .addComponent(tfCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGap(62, 62, 62)
-                                    .addComponent(btBuscarLivro)
+                                    .addComponent(btBuscarPeca)
                                     .addGap(60, 60, 60)
-                                    .addComponent(cbBuscarTodos)))
+                                    .addComponent(cbBuscarTodas)))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(btEditar)
                                 .addGap(109, 109, 109)
@@ -158,8 +158,8 @@ public class FormBuscarPeças extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tfCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btBuscarLivro)
-                    .addComponent(cbBuscarTodos))
+                    .addComponent(btBuscarPeca)
+                    .addComponent(cbBuscarTodas))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
@@ -174,40 +174,40 @@ public class FormBuscarPeças extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btBuscarLivroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btBuscarLivroActionPerformed
+    private void btBuscarPecaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btBuscarPecaActionPerformed
         // TODO add your handling code here:
         limparTabela();
         
-        if(cbBuscarTodos.isSelected()){ // buscar todos os livros
+        if(cbBuscarTodas.isSelected()){ // buscar todos os livros
             
             List<Peça> lista = FormPricipal.daoPeça.todosPeça();
-            for(Peça l: lista){
-                incluirLivro(l);
+            for(Peça p: lista){
+                incluirPeca(p);
             }
         }
         else{ // buscar um so
             
             if(tfCodigo.getText().trim().length() != 0){
                 
-                int codigo = Integer.parseInt(tfCodigo.getText());
-                Peça livro = FormPricipal.daoPeça.buscarPeça(Integer.toString(codigo));
-                if(livro != null){
-                    incluirLivro(livro);
+               String codigo = tfCodigo.getText();
+                Peça peca = FormPricipal.daoPeça.buscarPeça(codigo);
+                if(peca != null){
+                    incluirPeca(peca);
                 }
                 else{
-                    JOptionPane.showMessageDialog(null, "Livro nao encontrado", "Atencao", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Peça não encontrada", "Atenção", JOptionPane.ERROR_MESSAGE);
                 }
             }
             else{
-                JOptionPane.showMessageDialog(null, "Prencher o codigo", "Atencao", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Prencher o codigo", "Atenção", JOptionPane.ERROR_MESSAGE);
                 
             }
         }
-    }//GEN-LAST:event_btBuscarLivroActionPerformed
+    }//GEN-LAST:event_btBuscarPecaActionPerformed
 
-    private void cbBuscarTodosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbBuscarTodosActionPerformed
+    private void cbBuscarTodasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbBuscarTodasActionPerformed
         // TODO add your handling code here:
-        if(cbBuscarTodos.isSelected()){
+        if(cbBuscarTodas.isSelected()){
             tfCodigo.setEnabled(false);
         }
         else{
@@ -215,7 +215,7 @@ public class FormBuscarPeças extends javax.swing.JFrame {
             tfCodigo.requestFocus();
             tfCodigo.setText("");
         }
-    }//GEN-LAST:event_cbBuscarTodosActionPerformed
+    }//GEN-LAST:event_cbBuscarTodasActionPerformed
 
     
     
@@ -227,19 +227,19 @@ public class FormBuscarPeças extends javax.swing.JFrame {
     private void btExclurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btExclurActionPerformed
         // TODO add your handling code here:
         
-        Peça livro = getLivro();
-        FormPricipal.daoPeça.removerPeça(livro.getCodigo());
+        Peça peca = getPeca();
+        FormPricipal.daoPeça.removerPeça(peca.getCodigo());
         
         modelo.removeRow(jTable1.getSelectedRow());
     }//GEN-LAST:event_btExclurActionPerformed
 
     private void btEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEditarActionPerformed
 
-        Peça livro = getLivro();
+        Peça peca = getPeca();
         
         FormPeças frm = new FormPeças();
         frm.setVisible(true);
-        frm.peça = livro;
+        frm.peça = peca;
         this.dispose();
         
     }//GEN-LAST:event_btEditarActionPerformed
@@ -256,24 +256,24 @@ public class FormBuscarPeças extends javax.swing.JFrame {
         }
     }
     
-    private void incluirLivro(Peça livro){
-        modelo.addRow(new Object[]{livro.getCodigo(), livro.getTitulo(), livro.getEditora(), livro.getEstoque(),
-            livro.getValor(), livro.getDataPublicacao()});
+    private void incluirPeca(Peça peca){
+        modelo.addRow(new Object[]{peca.getCodigo(), peca.getDescricao(), peca.getFornecedor(), peca.getEstoque(),
+            peca.getValor(), peca.getDataCadastro()});
         
     }
     
-    private Peça getLivro(){
-        Peça livro = new Peça();
+    private Peça getPeca(){
+        Peça peca = new Peça();
         int linha = jTable1.getSelectedRow();
         
-        livro.setCodigo((String) modelo.getValueAt(linha, 0));
-        livro.setTitulo((String) modelo.getValueAt(linha, 1));
-        livro.setEditora((String) modelo.getValueAt(linha, 2));
-        livro.setEstoque((Integer) modelo.getValueAt(linha, 3));
-        livro.setValor((Float) modelo.getValueAt(linha, 4));
-        livro.setDataPublicacao((String) modelo.getValueAt(linha, 5));
+        peca.setCodigo((String) modelo.getValueAt(linha, 0));
+        peca.setDescricao((String) modelo.getValueAt(linha, 1));
+        peca.setFornecedor((String) modelo.getValueAt(linha, 2));
+        peca.setEstoque((Integer) modelo.getValueAt(linha, 3));
+        peca.setValor((Float) modelo.getValueAt(linha, 4));
+        peca.setDataCadastro((String) modelo.getValueAt(linha, 5));
         
-        return livro;
+        return peca;
     }
     
     /**
@@ -303,6 +303,8 @@ public class FormBuscarPeças extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -313,11 +315,11 @@ public class FormBuscarPeças extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btBuscarLivro;
+    private javax.swing.JButton btBuscarPeca;
     private javax.swing.JButton btEditar;
     private javax.swing.JButton btExclur;
     private javax.swing.JButton btSair;
-    private javax.swing.JCheckBox cbBuscarTodos;
+    private javax.swing.JCheckBox cbBuscarTodas;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
     private javax.swing.JLabel lbCodigo;

@@ -5,6 +5,7 @@
  */
 package forms;
 
+import classes.Cliente;
 import classes.Fornecedor;
 import classes.Item;
 import classes.Peça;
@@ -20,6 +21,7 @@ import javax.xml.bind.annotation.XmlElement;
 public class FormVenda extends javax.swing.JFrame {
     private Venda venda = null;
     private Fornecedor fornecedor = null;
+      private Cliente cliente = null;
     private Peça peça = null;
     
     private float soma = 0;
@@ -62,8 +64,8 @@ public class FormVenda extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
-        btBuscarItem = new javax.swing.JButton();
-        tfCodLivro = new javax.swing.JTextField();
+        btBuscarPeca = new javax.swing.JButton();
+        tfCodigo = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
@@ -82,6 +84,8 @@ public class FormVenda extends javax.swing.JFrame {
         btFecharVenda = new javax.swing.JButton();
         btCancelar = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        tfQuantidadeEstoque = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -186,27 +190,27 @@ public class FormVenda extends javax.swing.JFrame {
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel10.setText("Código do Livro:");
+        jLabel10.setText("Código da Peça:");
         jPanel3.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 14, -1, -1));
 
-        btBuscarItem.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btBuscarItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icBuscarItem.png"))); // NOI18N
-        btBuscarItem.setText("Buscar Item");
-        btBuscarItem.setEnabled(false);
-        btBuscarItem.addActionListener(new java.awt.event.ActionListener() {
+        btBuscarPeca.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btBuscarPeca.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icBuscarItem.png"))); // NOI18N
+        btBuscarPeca.setText("Buscar Peça");
+        btBuscarPeca.setEnabled(false);
+        btBuscarPeca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btBuscarItemActionPerformed(evt);
+                btBuscarPecaActionPerformed(evt);
             }
         });
-        jPanel3.add(btBuscarItem, new org.netbeans.lib.awtextra.AbsoluteConstraints(135, 22, -1, -1));
-        jPanel3.add(tfCodLivro, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 34, 89, -1));
+        jPanel3.add(btBuscarPeca, new org.netbeans.lib.awtextra.AbsoluteConstraints(135, 22, -1, -1));
+        jPanel3.add(tfCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 34, 89, -1));
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel11.setText("Título:");
+        jLabel11.setText("Descrição:");
         jPanel3.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(307, 14, -1, -1));
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel12.setText("Editora:");
+        jLabel12.setText("Fornecedor:");
         jPanel3.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(602, 14, -1, -1));
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -232,6 +236,12 @@ public class FormVenda extends javax.swing.JFrame {
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel14.setText("Quantidade:");
         getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 382, -1, -1));
+
+        tfQuantidade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfQuantidadeActionPerformed(evt);
+            }
+        });
         getContentPane().add(tfQuantidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 412, 68, -1));
 
         btIncluirLivro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icIncluirItem.png"))); // NOI18N
@@ -312,6 +322,16 @@ public class FormVenda extends javax.swing.JFrame {
         });
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(758, 594, -1, 41));
 
+        tfQuantidadeEstoque.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfQuantidadeEstoqueActionPerformed(evt);
+            }
+        });
+        getContentPane().add(tfQuantidadeEstoque, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 410, 110, -1));
+
+        jLabel16.setText("Quantidade Estoque:");
+        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 390, -1, -1));
+
         setSize(new java.awt.Dimension(960, 758));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
@@ -322,13 +342,13 @@ public class FormVenda extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowOpened
 
     private void btBuscarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btBuscarClienteActionPerformed
-        fornecedor = FormPricipal.daoFornecedor.buscarFornecedor(tfCpf.getText());
-        if(fornecedor != null)
+        cliente = FormPricipal.daoCliente.buscarCliente(tfCpf.getText());
+        if(cliente != null)
         {
-            lbNome.setText(fornecedor.getNome());
-            lbEndereco.setText(fornecedor.getEndereco().getLogradouro());
-            lbTelefone.setText(fornecedor.getEmail());
-            lbEmail.setText(fornecedor.getEmail());
+            lbNome.setText(cliente.getNome());
+            lbEndereco.setText(cliente.getEndereco().getLogradouro());
+            lbTelefone.setText(cliente.getTelefone());
+            lbEmail.setText(cliente.getEmail());
             
             btConfirmaCliente.setEnabled(true);
         }
@@ -341,26 +361,35 @@ public class FormVenda extends javax.swing.JFrame {
         }// TODO add your handling code here:
     }//GEN-LAST:event_btBuscarClienteActionPerformed
 
-    private void btBuscarItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btBuscarItemActionPerformed
-        peça = FormPricipal.daoPeça.buscarPeça(tfCodLivro.getText());
+    private void btBuscarPecaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btBuscarPecaActionPerformed
+
+
+        peça = FormPricipal.daoPeça.buscarPeça(tfCodigo.getText());
         if(peça != null)
         {
-            lbTitulo.setText(peça.getTitulo());
-            lbEditora.setText(peça.getEditora());
+            lbTitulo.setText(peça.getDescricao());
+            lbEditora.setText(peça.getFornecedor());
             lbValorUnitario.setText(Float.toString(peça.getValor()));
+            tfQuantidadeEstoque.setText(Integer.toString(peça.getEstoque()));
+            
             
         }
+        
         else
         {
             JOptionPane.showMessageDialog(null, "Livro não encontrado!", "Atenção", JOptionPane.INFORMATION_MESSAGE);
-            tfCodLivro.requestFocus();
-        }        // TODO add your handling code here:
-    }//GEN-LAST:event_btBuscarItemActionPerformed
+            tfCodigo.requestFocus();
+        }        // TODO add your handling code here:*/
+      
+   
+                           
+                
+    }//GEN-LAST:event_btBuscarPecaActionPerformed
 
     private void btConfirmaClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConfirmaClienteActionPerformed
         venda.setCliente(fornecedor);
         btConfirmaCliente.setEnabled(false);
-        btBuscarItem.setEnabled(true);
+        btBuscarPeca.setEnabled(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_btConfirmaClienteActionPerformed
 
@@ -373,7 +402,7 @@ public class FormVenda extends javax.swing.JFrame {
             it.calcularValorItem();
             
             venda.adicionarItem(it);
-            modelo.addRow(new Object[]{peça.getCodigo(),peça.getTitulo(),quantidade,peça.getValor(),it.getValorItem()});
+            modelo.addRow(new Object[]{peça.getCodigo(),peça.getDescricao(),quantidade,peça.getValor(),it.getValorItem()});
             soma += it.getValorItem();
             lbTotal.setText("R$ "+ Float.toString(soma));
             
@@ -427,10 +456,19 @@ public class FormVenda extends javax.swing.JFrame {
               venda.setNumero(FormPricipal.daoVenda.Proximo());
               FormPricipal.daoVenda.inserirVenda(venda);
               
+              for(int i = 0; i < jTable1.getRowCount(); i++){
+                  String codigo = (String) modelo.getValueAt(i, 0);
+                  int quantidade = (int) modelo.getValueAt(i, 2);
+
+                  Peça p = FormPricipal.daoPeça.buscarPeça(codigo);
+                  p.setEstoque(p.getEstoque() - quantidade);
+              }
+              
+              
               JOptionPane.showMessageDialog(null, "Venda Efetuada com sucesso.", "Atenção", JOptionPane.INFORMATION_MESSAGE);
               
               venda = new Venda();
-              limparVenda();
+              limparVenda();             
               btConfirmaCliente.setEnabled(true);
         }
     }//GEN-LAST:event_btFecharVendaActionPerformed
@@ -439,6 +477,14 @@ public class FormVenda extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void tfQuantidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfQuantidadeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfQuantidadeActionPerformed
+
+    private void tfQuantidadeEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfQuantidadeEstoqueActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfQuantidadeEstoqueActionPerformed
 
     /**
      * @param args the command line arguments
@@ -454,7 +500,7 @@ public class FormVenda extends javax.swing.JFrame {
     private void limparVenda()
     {
         tfCpf.setText("");
-        tfCodLivro.setText("");
+        tfCodigo.setText("");
         tfQuantidade.setText("");
         lbEditora.setText("");
         lbEmail.setText("");
@@ -501,7 +547,7 @@ public class FormVenda extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btBuscarCliente;
-    private javax.swing.JButton btBuscarItem;
+    private javax.swing.JButton btBuscarPeca;
     private javax.swing.JButton btCancelar;
     private javax.swing.JButton btConfirmaCliente;
     private javax.swing.JButton btFecharVenda;
@@ -515,6 +561,7 @@ public class FormVenda extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -538,8 +585,9 @@ public class FormVenda extends javax.swing.JFrame {
     private javax.swing.JLabel lbTitulo;
     private javax.swing.JLabel lbTotal;
     private javax.swing.JLabel lbValorUnitario;
-    private javax.swing.JTextField tfCodLivro;
+    private javax.swing.JTextField tfCodigo;
     private javax.swing.JFormattedTextField tfCpf;
     private javax.swing.JTextField tfQuantidade;
+    private javax.swing.JTextField tfQuantidadeEstoque;
     // End of variables declaration//GEN-END:variables
 }

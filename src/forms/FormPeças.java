@@ -5,7 +5,9 @@
  */
 package forms;
 
+import classes.Fornecedor;
 import classes.Peça;
+import java.util.List;
 import javax.swing.JOptionPane;
 
 /**
@@ -15,26 +17,25 @@ import javax.swing.JOptionPane;
 public class FormPeças extends javax.swing.JFrame {
 
     public Peça peça = null;
-    
-    
+    private Fornecedor fornecedor = null;
+
     public FormPeças() {
         initComponents();
     }
 
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         tfCodigo = new javax.swing.JTextField();
-        tfTitulo = new javax.swing.JTextField();
+        tfDescricao = new javax.swing.JTextField();
         lbCodigo = new javax.swing.JLabel();
         lbTitulo = new javax.swing.JLabel();
-        boxFronecedor = new javax.swing.JComboBox<>();
+        boxFornecedor = new javax.swing.JComboBox<>();
         lbFornecedor = new javax.swing.JLabel();
         tfValor = new javax.swing.JTextField();
         tfQuantidade = new javax.swing.JTextField();
-        tfDataPublicacao = new javax.swing.JFormattedTextField();
+        tfDataCadastro = new javax.swing.JFormattedTextField();
         lbValor = new javax.swing.JLabel();
         lbQuantidade = new javax.swing.JLabel();
         lbData = new javax.swing.JLabel();
@@ -48,7 +49,6 @@ public class FormPeças extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de Livros (Acervo)");
-        setMaximumSize(new java.awt.Dimension(90, 70));
         setMinimumSize(new java.awt.Dimension(90, 70));
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -58,17 +58,21 @@ public class FormPeças extends javax.swing.JFrame {
         });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         getContentPane().add(tfCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 140, -1));
-        getContentPane().add(tfTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 170, 310, -1));
+        getContentPane().add(tfDescricao, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 170, 310, -1));
 
         lbCodigo.setText("Código");
         getContentPane().add(lbCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
 
-        lbTitulo.setText("Título");
+        lbTitulo.setText("Descrição");
         getContentPane().add(lbTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 150, -1, -1));
 
-        boxFronecedor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Editora Vozes", "Editora Arqueiro", "Editora Rocco" }));
-        boxFronecedor.setEnabled(false);
-        getContentPane().add(boxFronecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 250, -1));
+        boxFornecedor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Peças Aguiar", "SP Peças", "Auto Peças" }));
+        boxFornecedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boxFornecedorActionPerformed(evt);
+            }
+        });
+        getContentPane().add(boxFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 250, -1));
 
         lbFornecedor.setText("Fornecedor");
         getContentPane().add(lbFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, -1, -1));
@@ -76,11 +80,11 @@ public class FormPeças extends javax.swing.JFrame {
         getContentPane().add(tfQuantidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 370, 150, -1));
 
         try {
-            tfDataPublicacao.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+            tfDataCadastro.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        getContentPane().add(tfDataPublicacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 370, 150, -1));
+        getContentPane().add(tfDataCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 370, 150, -1));
 
         lbValor.setText("Valor Unitário");
         getContentPane().add(lbValor, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, -1, -1));
@@ -88,7 +92,7 @@ public class FormPeças extends javax.swing.JFrame {
         lbQuantidade.setText("Quantidade em estoque");
         getContentPane().add(lbQuantidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 350, -1, -1));
 
-        lbData.setText("Data de Publicação");
+        lbData.setText("Cadastrado em");
         getContentPane().add(lbData, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 350, -1, -1));
 
         jToolBar2.setFloatable(false);
@@ -179,11 +183,11 @@ public class FormPeças extends javax.swing.JFrame {
 
     private void btCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCadastrarActionPerformed
         // TODO add your handling code here:
-        int opcao = JOptionPane.showConfirmDialog(null, "Deseja cadastrar vários livros?", "Cadastrar Livro", JOptionPane.YES_NO_OPTION);
+        /* int opcao = JOptionPane.showConfirmDialog(null, "Deseja cadastrar várias Peças?", "Cadastrar Peça", JOptionPane.YES_NO_OPTION);
         
         if(opcao == JOptionPane.YES_OPTION){
             cadastrarLivro();
-            JOptionPane.showMessageDialog(null, "Livros cadastrados com sucesso", "Alerta de cadastro", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Peças cadastrados com sucesso", "Alerta de cadastro", JOptionPane.INFORMATION_MESSAGE);
             
         }
         
@@ -191,44 +195,56 @@ public class FormPeças extends javax.swing.JFrame {
         int cont = 0; 
         
         this.peça.setCodigo(tfCodigo.getText());
-        this.peça.setTitulo(tfTitulo.getText());
-        this.peça.setEditora(boxFronecedor.getSelectedItem().toString());
+        this.peça.setDescricao(tfDescricao.getText());
+        this.peça.setFornecedor(boxFronecedor.getSelectedItem().toString());
         this.peça.setValor(Float.parseFloat(tfValor.getText()));
         this.peça.setEstoque(Integer.parseInt(tfQuantidade.getText()));
-        this.peça.setDataPublicacao(tfDataPublicacao.getText());
+        this.peça.setDataCadastro(tfDataCadastro.getText());
         
         FormPricipal.daoPeça.adicionarPeça(this.peça);
-        JOptionPane.showMessageDialog(null, "Livro Cadastrado!" , "Cadastro de Livros", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Peça Cadastrado!" , "Cadastro de Peças", JOptionPane.INFORMATION_MESSAGE);
+        limpar(); */
+        Peça peca = new Peça();
+        int cont = 0;
+        peca.setCodigo(tfCodigo.getText());
+        peca.setDescricao(tfDescricao.getText());
+        peca.setFornecedor(boxFornecedor.getSelectedItem().toString());
+        peca.setValor(Float.parseFloat(tfValor.getText()));
+        peca.setEstoque(Integer.parseInt(tfQuantidade.getText()));
+        peca.setDataCadastro(tfDataCadastro.getText());
+
+        FormPricipal.daoPeça.adicionarPeça(peca);
+        JOptionPane.showMessageDialog(null, "Livro Cadastrado!", "Cadastro de Livros", JOptionPane.INFORMATION_MESSAGE);
         limpar();
     }//GEN-LAST:event_btCadastrarActionPerformed
 
-    public void cadastrarLivro(){
+    public void cadastrarLivro() {
         Peça peça = null;
-        for(int i = 1; i < 31; i++){
-            
+        for (int i = 1; i < 31; i++) {
+
             peça = new Peça();
-            peça.setCodigo(Integer.toString(1000+i));
-            peça.setTitulo("Livro com Titulo " + i);
-            peça.setEditora("Editora" + i+10);
+            peça.setCodigo(Integer.toString(1000 + i));
+            peça.setDescricao("Descrição Peça " + i);
+            peça.setFornecedor("Fornecedor" + i + 10);
             peça.setEstoque((int) (Math.random() * 10) + 10 * i);
-            peça.setValor((50%i) + (i*10));
-            peça.setDataPublicacao(i+"/08/"+1990+i);
-            
+            peça.setValor((50 % i) + (i * 10));
+            peça.setDataCadastro(i + "/08/" + 1990 + i);
+
             FormPricipal.daoPeça.adicionarPeça(peça);
-            
+
         }
     }
-    
-    private void limpar(){
-    
+
+    private void limpar() {
+
         tfCodigo.setText("");
-        tfTitulo.setText("");
-        boxFronecedor.setSelectedIndex(-1);
+        tfDescricao.setText("");
+        boxFornecedor.setSelectedIndex(-1);
         tfValor.setText("");
         tfQuantidade.setText("");
-        tfDataPublicacao.setText("");
+        tfDataCadastro.setText("");
     }
-    
+
     private void btCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCancelarActionPerformed
         // TODO add your handling code here:
         limpar();
@@ -245,28 +261,38 @@ public class FormPeças extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
 
-        if(peça != null){
-            
+        if (peça != null) {
+
             btAtualizar.setEnabled(true);
             tfCodigo.setEnabled(false);
-            
+
             tfCodigo.setText(peça.getCodigo());
-            tfTitulo.setText(peça.getTitulo());
-            
-            for (int i = 0; i < boxFronecedor.getItemCount(); i++){
-                if(boxFronecedor.getItemAt(i).equals(peça.getEditora())){
-                boxFronecedor.setSelectedItem(i);
+            tfDescricao.setText(peça.getDescricao());
+
+            for (int i = 0; i < boxFornecedor.getItemCount(); i++) {
+                if (boxFornecedor.getItemAt(i).equals(peça.getFornecedor())) {
+                    boxFornecedor.setSelectedItem(i);
                 }
             }
-            
+
             tfValor.setText(Float.toString(peça.getValor()));
             tfQuantidade.setText(Integer.toString(peça.getEstoque()));
-            tfDataPublicacao.setText(peça.getDataPublicacao());
-        }
-        else{
-        
+            tfDataCadastro.setText(peça.getDataCadastro());
+        } else {
+
             btAtualizar.setEnabled(false);
             tfCodigo.setEnabled(true);
+        }
+        
+        
+        
+        String nome = null;
+         List<Fornecedor> listaForn = null;
+        Arraylist listaforn = new Arraylist();
+        listaForn = FormPricipal.daoFornecedor.todosFornecedores();
+   
+        for (Fornecedor q : listaForn) {
+            boxFornecedor.addItem(q.getNome());
         }
 
     }//GEN-LAST:event_formWindowOpened
@@ -274,16 +300,20 @@ public class FormPeças extends javax.swing.JFrame {
     private void btAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAtualizarActionPerformed
 
         Peça peça = new Peça();
-        
+
         peça.setCodigo(tfCodigo.getText());
-        peça.setTitulo(tfTitulo.getText());
-        peça.setEditora(boxFronecedor.getSelectedItem().toString());
+        peça.setDescricao(tfDescricao.getText());
+        peça.setFornecedor(boxFornecedor.getSelectedItem().toString());
         peça.setValor(Float.parseFloat(tfValor.getText()));
         peça.setEstoque(Integer.parseInt(tfQuantidade.getText()));
-        peça.setDataPublicacao(tfDataPublicacao.getText());
-        
+        peça.setDataCadastro(tfDataCadastro.getText());
+
         FormPricipal.daoPeça.alterarPeça(peça);
     }//GEN-LAST:event_btAtualizarActionPerformed
+
+    private void boxFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boxFornecedorActionPerformed
+       
+    }//GEN-LAST:event_boxFornecedorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -312,6 +342,8 @@ public class FormPeças extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -322,7 +354,7 @@ public class FormPeças extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> boxFronecedor;
+    private javax.swing.JComboBox<String> boxFornecedor;
     private javax.swing.JButton btAtualizar;
     private javax.swing.JButton btCadastrar;
     private javax.swing.JButton btCancelar;
@@ -337,9 +369,9 @@ public class FormPeças extends javax.swing.JFrame {
     private javax.swing.JLabel lbTitulo;
     private javax.swing.JLabel lbValor;
     private javax.swing.JTextField tfCodigo;
-    private javax.swing.JFormattedTextField tfDataPublicacao;
+    private javax.swing.JFormattedTextField tfDataCadastro;
+    private javax.swing.JTextField tfDescricao;
     private javax.swing.JTextField tfQuantidade;
-    private javax.swing.JTextField tfTitulo;
     private javax.swing.JTextField tfValor;
     // End of variables declaration//GEN-END:variables
 }
