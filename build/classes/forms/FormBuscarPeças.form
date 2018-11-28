@@ -86,6 +86,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="btBuscarPeca">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/ImagensProjeto/wrench.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Buscar Pe&#xe7;a"/>
       </Properties>
       <Events>
@@ -94,6 +97,9 @@
     </Component>
     <Component class="javax.swing.JCheckBox" name="cbBuscarTodas">
       <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="cc" green="0" red="0" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Buscar todas"/>
       </Properties>
       <Events>
@@ -107,6 +113,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="btEditar">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/ImagensProjeto/pencil.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Editar"/>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
@@ -116,6 +125,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="btSair">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/ImagensProjeto/door_out.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Sair"/>
       </Properties>
       <Events>
@@ -124,6 +136,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="btExclur">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/ImagensProjeto/delete.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Excluir"/>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>

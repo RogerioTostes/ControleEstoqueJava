@@ -176,6 +176,7 @@ public class FormFornecedor extends javax.swing.JFrame {
 
         getContentPane().add(abas, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, -1));
 
+        btCadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagensProjeto/lorry_add.png"))); // NOI18N
         btCadastrar.setText("Cadastrar");
         btCadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -184,6 +185,7 @@ public class FormFornecedor extends javax.swing.JFrame {
         });
         getContentPane().add(btCadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 350, 110, 40));
 
+        btAtualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagensProjeto/pencil.png"))); // NOI18N
         btAtualizar.setText("Atualizar");
         btAtualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -192,6 +194,7 @@ public class FormFornecedor extends javax.swing.JFrame {
         });
         getContentPane().add(btAtualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 350, 100, 40));
 
+        btLimpar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagensProjeto/arrow_refresh.png"))); // NOI18N
         btLimpar.setText("Limpar");
         btLimpar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -200,6 +203,7 @@ public class FormFornecedor extends javax.swing.JFrame {
         });
         getContentPane().add(btLimpar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 350, 100, 40));
 
+        btSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagensProjeto/door_out.png"))); // NOI18N
         btSair.setText("Sair");
         btSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -208,6 +212,7 @@ public class FormFornecedor extends javax.swing.JFrame {
         });
         getContentPane().add(btSair, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 350, 100, 40));
 
+        btBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagensProjeto/magnifier.png"))); // NOI18N
         btBuscar.setText("Buscar");
         btBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

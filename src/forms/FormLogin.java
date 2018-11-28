@@ -37,6 +37,8 @@ public class FormLogin extends javax.swing.JFrame {
         btSair = new javax.swing.JButton();
         tfSenha = new javax.swing.JPasswordField();
         lbMensagem = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Processo de Login");
@@ -61,7 +63,7 @@ public class FormLogin extends javax.swing.JFrame {
         getContentPane().add(tfLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 250, 30));
 
         btEfetuar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        btEfetuar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icConfirmarCliente.png"))); // NOI18N
+        btEfetuar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagensProjeto/accept.png"))); // NOI18N
         btEfetuar.setText("Efetuar");
         btEfetuar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -71,17 +73,17 @@ public class FormLogin extends javax.swing.JFrame {
         getContentPane().add(btEfetuar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 120, 40));
 
         btCancelar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        btCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cancelar.png"))); // NOI18N
+        btCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagensProjeto/cancel.png"))); // NOI18N
         btCancelar.setText("Cancelar");
         btCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btCancelarActionPerformed(evt);
             }
         });
-        getContentPane().add(btCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 270, -1, 40));
+        getContentPane().add(btCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 270, -1, 40));
 
         btSair.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        btSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icSair.png"))); // NOI18N
+        btSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagensProjeto/door_out.png"))); // NOI18N
         btSair.setText("Sair");
         btSair.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
@@ -114,6 +116,12 @@ public class FormLogin extends javax.swing.JFrame {
 
         lbMensagem.setForeground(new java.awt.Color(255, 0, 0));
         getContentPane().add(lbMensagem, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 230, 30));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagensProjeto/key.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, -1, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagensProjeto/user_suit.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, -1, -1));
 
         setSize(new java.awt.Dimension(448, 383));
         setLocationRelativeTo(null);
@@ -233,6 +241,8 @@ public class FormLogin extends javax.swing.JFrame {
     private javax.swing.JButton btCancelar;
     private javax.swing.JButton btEfetuar;
     private javax.swing.JButton btSair;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel lbLogin;
     private javax.swing.JLabel lbMensagem;
     private javax.swing.JLabel lbSenha;

@@ -86,6 +86,7 @@ public class FormVenda extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         tfQuantidadeEstoque = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -95,7 +96,7 @@ public class FormVenda extends javax.swing.JFrame {
         });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        jPanel1.setBorder(new javax.swing.border.MatteBorder(null));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -128,14 +129,14 @@ public class FormVenda extends javax.swing.JFrame {
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 71, -1, -1));
 
         btBuscarCliente.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btBuscarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icBuscarCliente.png"))); // NOI18N
+        btBuscarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagensProjeto/user.png"))); // NOI18N
         btBuscarCliente.setText("Buscar");
         btBuscarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btBuscarClienteActionPerformed(evt);
             }
         });
-        getContentPane().add(btBuscarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 92, -1, -1));
+        getContentPane().add(btBuscarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, -1, -1));
 
         jPanel2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -157,7 +158,7 @@ public class FormVenda extends javax.swing.JFrame {
         jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(572, 14, -1, -1));
 
         btConfirmaCliente.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btConfirmaCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icConfirmarCliente.png"))); // NOI18N
+        btConfirmaCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagensProjeto/accept.png"))); // NOI18N
         btConfirmaCliente.setText("Confirmar");
         btConfirmaCliente.setEnabled(false);
         btConfirmaCliente.addActionListener(new java.awt.event.ActionListener() {
@@ -194,7 +195,7 @@ public class FormVenda extends javax.swing.JFrame {
         jPanel3.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 14, -1, -1));
 
         btBuscarPeca.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btBuscarPeca.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icBuscarItem.png"))); // NOI18N
+        btBuscarPeca.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagensProjeto/wrench.png"))); // NOI18N
         btBuscarPeca.setText("Buscar Peça");
         btBuscarPeca.setEnabled(false);
         btBuscarPeca.addActionListener(new java.awt.event.ActionListener() {
@@ -242,16 +243,16 @@ public class FormVenda extends javax.swing.JFrame {
                 tfQuantidadeActionPerformed(evt);
             }
         });
-        getContentPane().add(tfQuantidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 412, 68, -1));
+        getContentPane().add(tfQuantidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 412, 80, -1));
 
-        btIncluirLivro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icIncluirItem.png"))); // NOI18N
+        btIncluirLivro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagensProjeto/add.png"))); // NOI18N
         btIncluirLivro.setText("Incluir");
         btIncluirLivro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btIncluirLivroActionPerformed(evt);
             }
         });
-        getContentPane().add(btIncluirLivro, new org.netbeans.lib.awtextra.AbsoluteConstraints(96, 402, -1, -1));
+        getContentPane().add(btIncluirLivro, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 410, -1, -1));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -272,7 +273,7 @@ public class FormVenda extends javax.swing.JFrame {
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 454, 710, 91));
 
         btRemoverItem.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btRemoverItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icRemoverItem.png"))); // NOI18N
+        btRemoverItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagensProjeto/delete.png"))); // NOI18N
         btRemoverItem.setText("Remover Item");
         btRemoverItem.setEnabled(false);
         btRemoverItem.addActionListener(new java.awt.event.ActionListener() {
@@ -292,7 +293,7 @@ public class FormVenda extends javax.swing.JFrame {
         getContentPane().add(lbTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(86, 551, -1, -1));
 
         btFecharVenda.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btFecharVenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icFecharVenda.png"))); // NOI18N
+        btFecharVenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagensProjeto/cart_put.png"))); // NOI18N
         btFecharVenda.setText("Fechar Venda");
         btFecharVenda.setEnabled(false);
         btFecharVenda.addActionListener(new java.awt.event.ActionListener() {
@@ -303,7 +304,7 @@ public class FormVenda extends javax.swing.JFrame {
         getContentPane().add(btFecharVenda, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 594, -1, -1));
 
         btCancelar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cancelar.png"))); // NOI18N
+        btCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagensProjeto/cancel.png"))); // NOI18N
         btCancelar.setText("Cancelar");
         btCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -313,24 +314,28 @@ public class FormVenda extends javax.swing.JFrame {
         getContentPane().add(btCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(388, 594, -1, -1));
 
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icSair.png"))); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagensProjeto/door_out.png"))); // NOI18N
         jButton3.setText("Sair");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(758, 594, -1, 41));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(749, 594, 80, -1));
 
+        tfQuantidadeEstoque.setBackground(new java.awt.Color(255, 204, 102));
         tfQuantidadeEstoque.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfQuantidadeEstoqueActionPerformed(evt);
             }
         });
-        getContentPane().add(tfQuantidadeEstoque, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 410, 110, -1));
+        getContentPane().add(tfQuantidadeEstoque, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 410, 130, -1));
 
         jLabel16.setText("Quantidade Estoque:");
         getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 390, -1, -1));
+
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagensProjeto/package_green.png"))); // NOI18N
+        getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 410, 20, -1));
 
         setSize(new java.awt.Dimension(960, 758));
         setLocationRelativeTo(null);
@@ -562,6 +567,7 @@ public class FormVenda extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

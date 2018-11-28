@@ -46,6 +46,7 @@ public class FormBuscarPeças extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Consulta de Livros em Acervo");
 
+        btBuscarPeca.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagensProjeto/wrench.png"))); // NOI18N
         btBuscarPeca.setText("Buscar Peça");
         btBuscarPeca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -53,6 +54,7 @@ public class FormBuscarPeças extends javax.swing.JFrame {
             }
         });
 
+        cbBuscarTodas.setForeground(new java.awt.Color(0, 0, 204));
         cbBuscarTodas.setText("Buscar todas");
         cbBuscarTodas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -62,6 +64,7 @@ public class FormBuscarPeças extends javax.swing.JFrame {
 
         lbCodigo.setText("Código");
 
+        btEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagensProjeto/pencil.png"))); // NOI18N
         btEditar.setText("Editar");
         btEditar.setEnabled(false);
         btEditar.addActionListener(new java.awt.event.ActionListener() {
@@ -70,6 +73,7 @@ public class FormBuscarPeças extends javax.swing.JFrame {
             }
         });
 
+        btSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagensProjeto/door_out.png"))); // NOI18N
         btSair.setText("Sair");
         btSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -77,6 +81,7 @@ public class FormBuscarPeças extends javax.swing.JFrame {
             }
         });
 
+        btExclur.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagensProjeto/delete.png"))); // NOI18N
         btExclur.setText("Excluir");
         btExclur.setEnabled(false);
         btExclur.addActionListener(new java.awt.event.ActionListener() {

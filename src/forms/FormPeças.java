@@ -39,13 +39,10 @@ public class FormPeças extends javax.swing.JFrame {
         lbValor = new javax.swing.JLabel();
         lbQuantidade = new javax.swing.JLabel();
         lbData = new javax.swing.JLabel();
-        jToolBar2 = new javax.swing.JToolBar();
-        btCadastrar = new javax.swing.JButton();
-        btAtualizar = new javax.swing.JButton();
-        jSeparator2 = new javax.swing.JSeparator();
-        btCancelar = new javax.swing.JButton();
-        jSeparator1 = new javax.swing.JSeparator();
         btSair = new javax.swing.JButton();
+        btCancelar = new javax.swing.JButton();
+        btAtualizar = new javax.swing.JButton();
+        btCadastrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de Livros (Acervo)");
@@ -57,14 +54,14 @@ public class FormPeças extends javax.swing.JFrame {
             }
         });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(tfCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 140, -1));
-        getContentPane().add(tfDescricao, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 170, 310, -1));
+        getContentPane().add(tfCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 140, -1));
+        getContentPane().add(tfDescricao, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 50, 310, -1));
 
         lbCodigo.setText("Código");
-        getContentPane().add(lbCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
+        getContentPane().add(lbCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, -1));
 
         lbTitulo.setText("Descrição");
-        getContentPane().add(lbTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 150, -1, -1));
+        getContentPane().add(lbTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 30, -1, -1));
 
         boxFornecedor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Peças Aguiar", "SP Peças", "Auto Peças" }));
         boxFornecedor.addActionListener(new java.awt.event.ActionListener() {
@@ -72,36 +69,72 @@ public class FormPeças extends javax.swing.JFrame {
                 boxFornecedorActionPerformed(evt);
             }
         });
-        getContentPane().add(boxFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 250, -1));
+        getContentPane().add(boxFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 250, -1));
 
         lbFornecedor.setText("Fornecedor");
-        getContentPane().add(lbFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, -1, -1));
-        getContentPane().add(tfValor, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 150, -1));
-        getContentPane().add(tfQuantidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 370, 150, -1));
+        getContentPane().add(lbFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, -1, -1));
+        getContentPane().add(tfValor, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 150, -1));
+        getContentPane().add(tfQuantidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 250, 150, -1));
 
         try {
             tfDataCadastro.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        getContentPane().add(tfDataCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 370, 150, -1));
+        getContentPane().add(tfDataCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 250, 150, -1));
 
         lbValor.setText("Valor Unitário");
-        getContentPane().add(lbValor, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, -1, -1));
+        getContentPane().add(lbValor, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, -1, -1));
 
         lbQuantidade.setText("Quantidade em estoque");
-        getContentPane().add(lbQuantidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 350, -1, -1));
+        getContentPane().add(lbQuantidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 230, -1, -1));
 
         lbData.setText("Cadastrado em");
-        getContentPane().add(lbData, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 350, -1, -1));
+        getContentPane().add(lbData, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 230, -1, -1));
 
-        jToolBar2.setFloatable(false);
-        jToolBar2.setRollover(true);
-        jToolBar2.setPreferredSize(new java.awt.Dimension(95, 75));
+        btSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagensProjeto/door_out.png"))); // NOI18N
+        btSair.setText("Sair");
+        btSair.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btSair.setMaximumSize(new java.awt.Dimension(90, 70));
+        btSair.setMinimumSize(new java.awt.Dimension(90, 70));
+        btSair.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btSairActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btSair, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 350, -1, -1));
 
-        btCadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/habilitado.png"))); // NOI18N
+        btCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagensProjeto/cancel.png"))); // NOI18N
+        btCancelar.setText("Cancelar");
+        btCancelar.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btCancelar.setMaximumSize(new java.awt.Dimension(90, 70));
+        btCancelar.setMinimumSize(new java.awt.Dimension(90, 70));
+        btCancelar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btCancelarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 350, -1, -1));
+
+        btAtualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagensProjeto/pencil.png"))); // NOI18N
+        btAtualizar.setText("Atualizar");
+        btAtualizar.setEnabled(false);
+        btAtualizar.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btAtualizar.setMaximumSize(new java.awt.Dimension(90, 70));
+        btAtualizar.setMinimumSize(new java.awt.Dimension(90, 70));
+        btAtualizar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btAtualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btAtualizarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btAtualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 350, -1, -1));
+
+        btCadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagensProjeto/wrench.png"))); // NOI18N
         btCadastrar.setText("Cadastrar");
-        btCadastrar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btCadastrar.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         btCadastrar.setMaximumSize(new java.awt.Dimension(90, 70));
         btCadastrar.setMinimumSize(new java.awt.Dimension(90, 70));
         btCadastrar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/desabilitado.png"))); // NOI18N
@@ -121,102 +154,11 @@ public class FormPeças extends javax.swing.JFrame {
                 btCadastrarActionPerformed(evt);
             }
         });
-        jToolBar2.add(btCadastrar);
-
-        btAtualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icAtualizar.png"))); // NOI18N
-        btAtualizar.setText("Atualizar");
-        btAtualizar.setEnabled(false);
-        btAtualizar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btAtualizar.setMaximumSize(new java.awt.Dimension(90, 70));
-        btAtualizar.setMinimumSize(new java.awt.Dimension(90, 70));
-        btAtualizar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        btAtualizar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btAtualizarActionPerformed(evt);
-            }
-        });
-        jToolBar2.add(btAtualizar);
-
-        jSeparator2.setBackground(new java.awt.Color(204, 204, 255));
-        jSeparator2.setForeground(new java.awt.Color(102, 102, 102));
-        jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        jSeparator2.setMaximumSize(new java.awt.Dimension(1, 75));
-        jToolBar2.add(jSeparator2);
-
-        btCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cancelar.png"))); // NOI18N
-        btCancelar.setText("Cancelar");
-        btCancelar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btCancelar.setMaximumSize(new java.awt.Dimension(90, 70));
-        btCancelar.setMinimumSize(new java.awt.Dimension(90, 70));
-        btCancelar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        btCancelar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btCancelarActionPerformed(evt);
-            }
-        });
-        jToolBar2.add(btCancelar);
-
-        jSeparator1.setBackground(new java.awt.Color(204, 204, 255));
-        jSeparator1.setForeground(new java.awt.Color(102, 102, 102));
-        jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        jSeparator1.setMaximumSize(new java.awt.Dimension(1, 75));
-        jToolBar2.add(jSeparator1);
-
-        btSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icSair.png"))); // NOI18N
-        btSair.setText("Sair");
-        btSair.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btSair.setMaximumSize(new java.awt.Dimension(90, 70));
-        btSair.setMinimumSize(new java.awt.Dimension(90, 70));
-        btSair.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        btSair.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btSairActionPerformed(evt);
-            }
-        });
-        jToolBar2.add(btSair);
-
-        getContentPane().add(jToolBar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 670, 80));
+        getContentPane().add(btCadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, 150, -1));
 
         setSize(new java.awt.Dimension(687, 484));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCadastrarActionPerformed
-        // TODO add your handling code here:
-        /* int opcao = JOptionPane.showConfirmDialog(null, "Deseja cadastrar várias Peças?", "Cadastrar Peça", JOptionPane.YES_NO_OPTION);
-        
-        if(opcao == JOptionPane.YES_OPTION){
-            cadastrarLivro();
-            JOptionPane.showMessageDialog(null, "Peças cadastrados com sucesso", "Alerta de cadastro", JOptionPane.INFORMATION_MESSAGE);
-            
-        }
-        
-        Peça peça = new Peça();
-        int cont = 0; 
-        
-        this.peça.setCodigo(tfCodigo.getText());
-        this.peça.setDescricao(tfDescricao.getText());
-        this.peça.setFornecedor(boxFronecedor.getSelectedItem().toString());
-        this.peça.setValor(Float.parseFloat(tfValor.getText()));
-        this.peça.setEstoque(Integer.parseInt(tfQuantidade.getText()));
-        this.peça.setDataCadastro(tfDataCadastro.getText());
-        
-        FormPricipal.daoPeça.adicionarPeça(this.peça);
-        JOptionPane.showMessageDialog(null, "Peça Cadastrado!" , "Cadastro de Peças", JOptionPane.INFORMATION_MESSAGE);
-        limpar(); */
-        Peça peca = new Peça();
-        int cont = 0;
-        peca.setCodigo(tfCodigo.getText());
-        peca.setDescricao(tfDescricao.getText());
-        peca.setFornecedor(boxFornecedor.getSelectedItem().toString());
-        peca.setValor(Float.parseFloat(tfValor.getText()));
-        peca.setEstoque(Integer.parseInt(tfQuantidade.getText()));
-        peca.setDataCadastro(tfDataCadastro.getText());
-
-        FormPricipal.daoPeça.adicionarPeça(peca);
-        JOptionPane.showMessageDialog(null, "Livro Cadastrado!", "Cadastro de Livros", JOptionPane.INFORMATION_MESSAGE);
-        limpar();
-    }//GEN-LAST:event_btCadastrarActionPerformed
 
     public void cadastrarLivro() {
         Peça peça = null;
@@ -254,10 +196,6 @@ public class FormPeças extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.dispose();
     }//GEN-LAST:event_btSairActionPerformed
-
-    private void btCadastrarAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_btCadastrarAncestorAdded
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btCadastrarAncestorAdded
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
 
@@ -315,6 +253,47 @@ public class FormPeças extends javax.swing.JFrame {
        
     }//GEN-LAST:event_boxFornecedorActionPerformed
 
+    private void btCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCadastrarActionPerformed
+        // TODO add your handling code here:
+        /* int opcao = JOptionPane.showConfirmDialog(null, "Deseja cadastrar várias Peças?", "Cadastrar Peça", JOptionPane.YES_NO_OPTION);
+
+        if(opcao == JOptionPane.YES_OPTION){
+            cadastrarLivro();
+            JOptionPane.showMessageDialog(null, "Peças cadastrados com sucesso", "Alerta de cadastro", JOptionPane.INFORMATION_MESSAGE);
+
+        }
+
+        Peça peça = new Peça();
+        int cont = 0;
+
+        this.peça.setCodigo(tfCodigo.getText());
+        this.peça.setDescricao(tfDescricao.getText());
+        this.peça.setFornecedor(boxFronecedor.getSelectedItem().toString());
+        this.peça.setValor(Float.parseFloat(tfValor.getText()));
+        this.peça.setEstoque(Integer.parseInt(tfQuantidade.getText()));
+        this.peça.setDataCadastro(tfDataCadastro.getText());
+
+        FormPricipal.daoPeça.adicionarPeça(this.peça);
+        JOptionPane.showMessageDialog(null, "Peça Cadastrado!" , "Cadastro de Peças", JOptionPane.INFORMATION_MESSAGE);
+        limpar(); */
+        Peça peca = new Peça();
+        int cont = 0;
+        peca.setCodigo(tfCodigo.getText());
+        peca.setDescricao(tfDescricao.getText());
+        peca.setFornecedor(boxFornecedor.getSelectedItem().toString());
+        peca.setValor(Float.parseFloat(tfValor.getText()));
+        peca.setEstoque(Integer.parseInt(tfQuantidade.getText()));
+        peca.setDataCadastro(tfDataCadastro.getText());
+
+        FormPricipal.daoPeça.adicionarPeça(peca);
+        JOptionPane.showMessageDialog(null, "Livro Cadastrado!", "Cadastro de Livros", JOptionPane.INFORMATION_MESSAGE);
+        limpar();
+    }//GEN-LAST:event_btCadastrarActionPerformed
+
+    private void btCadastrarAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_btCadastrarAncestorAdded
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btCadastrarAncestorAdded
+
     /**
      * @param args the command line arguments
      */
@@ -359,9 +338,6 @@ public class FormPeças extends javax.swing.JFrame {
     private javax.swing.JButton btCadastrar;
     private javax.swing.JButton btCancelar;
     private javax.swing.JButton btSair;
-    private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JToolBar jToolBar2;
     private javax.swing.JLabel lbCodigo;
     private javax.swing.JLabel lbData;
     private javax.swing.JLabel lbFornecedor;

@@ -56,10 +56,6 @@ public class FormPricipal extends javax.swing.JFrame {
         jMenuItemConsClientes = new javax.swing.JMenuItem();
         jMenuItemConsProdutos = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuCompras = new javax.swing.JMenu();
-        jMenuItemDia = new javax.swing.JMenuItem();
-        jMenuItemMes = new javax.swing.JMenuItem();
-        jMenuItemAno = new javax.swing.JMenuItem();
         jMenuVenda = new javax.swing.JMenu();
         jMenuItemNovaVenda = new javax.swing.JMenuItem();
         jMenuItemEmitirNota = new javax.swing.JMenuItem();
@@ -81,8 +77,10 @@ public class FormPricipal extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/logoRogerio.png"))); // NOI18N
         jPanel1.add(jLabel1, java.awt.BorderLayout.CENTER);
 
+        jMenuCadastro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagensProjeto/add.png"))); // NOI18N
         jMenuCadastro.setText("Cadastros");
 
+        jMenuItemCadCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagensProjeto/lorry.png"))); // NOI18N
         jMenuItemCadCliente.setText("Fornecedores");
         jMenuItemCadCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -91,6 +89,7 @@ public class FormPricipal extends javax.swing.JFrame {
         });
         jMenuCadastro.add(jMenuItemCadCliente);
 
+        jMenuItemCadProdutos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagensProjeto/wrench.png"))); // NOI18N
         jMenuItemCadProdutos.setText("Peças");
         jMenuItemCadProdutos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -99,6 +98,7 @@ public class FormPricipal extends javax.swing.JFrame {
         });
         jMenuCadastro.add(jMenuItemCadProdutos);
 
+        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagensProjeto/user.png"))); // NOI18N
         jMenuItem1.setText("Clientes");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -108,6 +108,7 @@ public class FormPricipal extends javax.swing.JFrame {
         jMenuCadastro.add(jMenuItem1);
         jMenuCadastro.add(jSeparator1);
 
+        jMenuItemSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagensProjeto/door_out.png"))); // NOI18N
         jMenuItemSair.setText("Sair");
         jMenuItemSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -118,8 +119,10 @@ public class FormPricipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenuCadastro);
 
+        jMenuConsulta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagensProjeto/magnifier.png"))); // NOI18N
         jMenuConsulta.setText("Consultas");
 
+        jMenuItemConsClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagensProjeto/lorry.png"))); // NOI18N
         jMenuItemConsClientes.setText("Fornecedores");
         jMenuItemConsClientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -128,6 +131,7 @@ public class FormPricipal extends javax.swing.JFrame {
         });
         jMenuConsulta.add(jMenuItemConsClientes);
 
+        jMenuItemConsProdutos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagensProjeto/wrench.png"))); // NOI18N
         jMenuItemConsProdutos.setText("Peças");
         jMenuItemConsProdutos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -136,6 +140,7 @@ public class FormPricipal extends javax.swing.JFrame {
         });
         jMenuConsulta.add(jMenuItemConsProdutos);
 
+        jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagensProjeto/user.png"))); // NOI18N
         jMenuItem2.setText("Clientes");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -144,21 +149,9 @@ public class FormPricipal extends javax.swing.JFrame {
         });
         jMenuConsulta.add(jMenuItem2);
 
-        jMenuCompras.setText("Compras");
-
-        jMenuItemDia.setText("Dia");
-        jMenuCompras.add(jMenuItemDia);
-
-        jMenuItemMes.setText("Mês");
-        jMenuCompras.add(jMenuItemMes);
-
-        jMenuItemAno.setText("Ano");
-        jMenuCompras.add(jMenuItemAno);
-
-        jMenuConsulta.add(jMenuCompras);
-
         jMenuBar1.add(jMenuConsulta);
 
+        jMenuVenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagensProjeto/cart.png"))); // NOI18N
         jMenuVenda.setText("Venda");
         jMenuVenda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -166,6 +159,7 @@ public class FormPricipal extends javax.swing.JFrame {
             }
         });
 
+        jMenuItemNovaVenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagensProjeto/cart_go.png"))); // NOI18N
         jMenuItemNovaVenda.setText("Nova Venda");
         jMenuItemNovaVenda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -174,6 +168,7 @@ public class FormPricipal extends javax.swing.JFrame {
         });
         jMenuVenda.add(jMenuItemNovaVenda);
 
+        jMenuItemEmitirNota.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagensProjeto/text_padding_left.png"))); // NOI18N
         jMenuItemEmitirNota.setText("Emitir Nota Fiscal");
         jMenuItemEmitirNota.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -184,12 +179,15 @@ public class FormPricipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenuVenda);
 
+        jMenuSuporte.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagensProjeto/user_comment.png"))); // NOI18N
         jMenuSuporte.setText("Suporte");
 
+        jMenuItemAjuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagensProjeto/help.png"))); // NOI18N
         jMenuItemAjuda.setText("Ajuda");
         jMenuSuporte.add(jMenuItemAjuda);
         jMenuSuporte.add(jSeparator2);
 
+        jMenuItemSobre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagensProjeto/book.png"))); // NOI18N
         jMenuItemSobre.setText("Sobre");
         jMenuSuporte.add(jMenuItemSobre);
 
@@ -301,19 +299,15 @@ public class FormPricipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenu jMenuCadastro;
-    private javax.swing.JMenu jMenuCompras;
     private javax.swing.JMenu jMenuConsulta;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItemAjuda;
-    private javax.swing.JMenuItem jMenuItemAno;
     private javax.swing.JMenuItem jMenuItemCadCliente;
     private javax.swing.JMenuItem jMenuItemCadProdutos;
     private javax.swing.JMenuItem jMenuItemConsClientes;
     private javax.swing.JMenuItem jMenuItemConsProdutos;
-    private javax.swing.JMenuItem jMenuItemDia;
     private javax.swing.JMenuItem jMenuItemEmitirNota;
-    private javax.swing.JMenuItem jMenuItemMes;
     private javax.swing.JMenuItem jMenuItemNovaVenda;
     private javax.swing.JMenuItem jMenuItemSair;
     private javax.swing.JMenuItem jMenuItemSobre;

@@ -59,15 +59,15 @@
               </Group>
               <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
               <Component id="jScrollPane1" min="-2" pref="178" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="40" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="btCancelar" alignment="0" min="-2" pref="57" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
+                  <Group type="103" alignment="1" groupAlignment="3" attributes="0">
                       <Component id="jButton3" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btEmitir" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
+                      <Component id="btEmitir" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
+                  <Component id="btCancelar" alignment="1" min="-2" pref="28" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -76,7 +76,7 @@
     <Component class="javax.swing.JButton" name="btCancelar">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/imagens/cancelar.png"/>
+          <Image iconType="3" name="/ImagensProjeto/cancel.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Cancelar"/>
       </Properties>
@@ -87,7 +87,7 @@
     <Component class="javax.swing.JButton" name="jButton3">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/imagens/icSair.png"/>
+          <Image iconType="3" name="/ImagensProjeto/door_out.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Sair"/>
       </Properties>
@@ -98,7 +98,7 @@
     <Component class="javax.swing.JButton" name="jButton1">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/imagens/icBuscarCliente.png"/>
+          <Image iconType="3" name="/ImagensProjeto/cart.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Buscar Venda"/>
       </Properties>
@@ -132,7 +132,7 @@
     <Component class="javax.swing.JButton" name="btEmitir">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/imagens/icNotaFiscal.png"/>
+          <Image iconType="3" name="/ImagensProjeto/text_padding_left.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Emitir"/>
         <Property name="enabled" type="boolean" value="false"/>
