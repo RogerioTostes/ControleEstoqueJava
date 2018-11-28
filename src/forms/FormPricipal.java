@@ -9,6 +9,12 @@ import dao.ClienteDAO;
 import dao.FornecedorDAO;
 import dao.PeçaDAO;
 import dao.VendaDAO;
+import java.awt.Desktop;
+import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -184,11 +190,21 @@ public class FormPricipal extends javax.swing.JFrame {
 
         jMenuItemAjuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagensProjeto/help.png"))); // NOI18N
         jMenuItemAjuda.setText("Ajuda");
+        jMenuItemAjuda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemAjudaActionPerformed(evt);
+            }
+        });
         jMenuSuporte.add(jMenuItemAjuda);
         jMenuSuporte.add(jSeparator2);
 
         jMenuItemSobre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagensProjeto/book.png"))); // NOI18N
         jMenuItemSobre.setText("Sobre");
+        jMenuItemSobre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemSobreActionPerformed(evt);
+            }
+        });
         jMenuSuporte.add(jMenuItemSobre);
 
         jMenuBar1.add(jMenuSuporte);
@@ -260,6 +276,22 @@ public class FormPricipal extends javax.swing.JFrame {
         //new FormBuscarCliente().setVisible(true);
           new FormBuscarCliente1().setVisible(true);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItemSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemSobreActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, "Feito por Octávio Oliveira e Rogério Tostes", "Stock Plus", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_jMenuItemSobreActionPerformed
+
+    private void jMenuItemAjudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemAjudaActionPerformed
+        // TODO add your handling code here:
+    
+Desktop desktop = Desktop.getDesktop();  
+        try {
+            desktop.open(new File("C:\\Users\\Gerim\\Desktop\\ControleEstoqueJava\\src\\RelotorioEstoque.pdf"));
+        } catch (IOException ex) {
+            Logger.getLogger(FormPricipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jMenuItemAjudaActionPerformed
 
     /**
      * @param args the command line arguments
