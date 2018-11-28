@@ -5,7 +5,7 @@
  */
 package forms;
 
-import classes.Venda;
+import classes.Estoque;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -148,7 +148,7 @@ public class FormEmitirNotaFiscal extends javax.swing.JFrame {
         // TODO add your handling code here:
         int numero = Integer.parseInt(jTextField1.getText());
 
-        Venda venda = FormPricipal.daoVenda.buscarVenda(numero);
+        Estoque venda = FormPricipal.daoVenda.buscarVenda(numero);
         if (venda != null) {
              btEmitir.setEnabled(true);
             jTextArea1.setText(venda.toString());

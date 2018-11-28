@@ -5,8 +5,8 @@
  */
 package dao;
 
-import classes.Venda;
-import classes.Venda;
+import classes.Estoque;
+import classes.Estoque;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,21 +16,21 @@ import java.util.List;
  */
 public class VendaDAO {
     
-    private List<Venda> lista = null;
+    private List<Estoque> lista = null;
 
     public VendaDAO() {
-        lista = new ArrayList<Venda>();
+        lista = new ArrayList<Estoque>();
     }
     
-    public void inserirVenda(Venda venda)
+    public void inserirVenda(Estoque venda)
     {
         lista.add(venda);
     }
     
-    public Venda buscarVenda(int numero)
+    public Estoque buscarVenda(int numero)
     {
-        Venda vd = null;
-        for(Venda venda: lista)
+        Estoque vd = null;
+        for(Estoque venda: lista)
         {
             if(venda.getNumero()== numero)
                 vd = venda;
@@ -44,16 +44,16 @@ public class VendaDAO {
     
     public void removerVenda(int numero)
     {
-        Venda venda = buscarVenda(numero);
+        Estoque venda = buscarVenda(numero);
         if(venda != null)
         {
             lista.remove(venda);
         }
     }
     
-    public void alterarVenda(Venda venda)
+    public void alterarVenda(Estoque venda)
     {
-        Venda ven = buscarVenda(venda.getNumero());
+        Estoque ven = buscarVenda(venda.getNumero());
         int num = lista.indexOf(ven);
         lista.set(num,venda);
 //        if(venda != null)
@@ -63,7 +63,7 @@ public class VendaDAO {
 //        }
     }
     
-    public List<Venda> todasVendas()
+    public List<Estoque> todasVendas()
     {
         return lista;
     }

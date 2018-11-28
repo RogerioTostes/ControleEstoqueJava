@@ -67,6 +67,7 @@ public Cliente cliente = null;
         btBuscar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Cadastro de Clientes ");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lbCpf.setText("CPF:");
@@ -235,6 +236,7 @@ public Cliente cliente = null;
 
         btAtualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagensProjeto/user_edit.png"))); // NOI18N
         btAtualizar.setText("Atualizar");
+        btAtualizar.setEnabled(false);
         btAtualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btAtualizarActionPerformed(evt);
@@ -338,6 +340,7 @@ public Cliente cliente = null;
         // TODO add your handling code here:
         String CPF = tfCpf.getText();
         Cliente cliente = FormPricipal.daoCliente.buscarCliente(CPF);
+        if(cliente != null){
         tfNome.setText(cliente.getNome());
         tfTelefone.setText(cliente.getTelefone());
         tfEmail.setText(cliente.getEmail());
@@ -360,6 +363,12 @@ public Cliente cliente = null;
             }
         }
         tfCep.setText(cliente.getEndereco().getCep());
+        btAtualizar.setEnabled(true);
+                }
+
+        else{
+                 JOptionPane.showMessageDialog(null, "Cliente não encontrada", "Atenção", JOptionPane.ERROR_MESSAGE);
+                }
         
     }//GEN-LAST:event_btBuscarActionPerformed
 

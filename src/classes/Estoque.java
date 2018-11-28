@@ -14,7 +14,7 @@ import java.util.List;
  *
  * @author Rogério e Octavio
  */
-public class Venda {
+public class Estoque {
     
     private  int numero=0;
     private Fornecedor fornecedor;
@@ -22,7 +22,7 @@ public class Venda {
     private float valorTotal;
     private Date data;
      private int cod;
-    public Venda() {
+    public Estoque() {
     
         lista = new ArrayList<Item>();
       //  numero++;

@@ -286,7 +286,7 @@ public class FormPeças extends javax.swing.JFrame {
         peca.setDataCadastro(tfDataCadastro.getText());
 
         FormPricipal.daoPeça.adicionarPeça(peca);
-        JOptionPane.showMessageDialog(null, "Peça Cadastrado!", "Cadastro de Peças", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null,  "Peça cadastrado com sucesso", "Cadastro de Peças", JOptionPane.INFORMATION_MESSAGE);
         limpar();
     }//GEN-LAST:event_btCadastrarActionPerformed
 

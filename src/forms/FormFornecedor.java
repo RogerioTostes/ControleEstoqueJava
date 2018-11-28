@@ -189,6 +189,7 @@ public class FormFornecedor extends javax.swing.JFrame {
 
         btAtualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagensProjeto/pencil.png"))); // NOI18N
         btAtualizar.setText("Atualizar");
+        btAtualizar.setEnabled(false);
         btAtualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btAtualizarActionPerformed(evt);
@@ -284,8 +285,10 @@ public class FormFornecedor extends javax.swing.JFrame {
 
     private void btBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btBuscarActionPerformed
         // TODO add your handling code here:
-        String CPF = tfCnpj.getText();
-        Fornecedor fornecedor = FormPricipal.daoFornecedor.buscarFornecedor(CPF);
+        String cnpj = tfCnpj.getText();
+        Fornecedor fornecedor = FormPricipal.daoFornecedor.buscarFornecedor(cnpj);
+        
+          if(fornecedor != null){
         tfNome.setText(fornecedor.getNome());
         tfTelefone.setText(fornecedor.getTelefone());
         tfEmail.setText(fornecedor.getEmail());
@@ -310,6 +313,13 @@ public class FormFornecedor extends javax.swing.JFrame {
             }
         }
         tfCep.setText(fornecedor.getEndereco().getCep());
+           btAtualizar.setEnabled(true);
+          }
+          
+          else{
+               JOptionPane.showMessageDialog(null, "Fornecedor não encontrado", "Atenção", JOptionPane.ERROR_MESSAGE);
+              
+          }
 
     }//GEN-LAST:event_btBuscarActionPerformed
 

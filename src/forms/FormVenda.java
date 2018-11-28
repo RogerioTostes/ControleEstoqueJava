@@ -9,7 +9,7 @@ import classes.Cliente;
 import classes.Fornecedor;
 import classes.Item;
 import classes.Peça;
-import classes.Venda;
+import classes.Estoque;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.xml.bind.annotation.XmlElement;
@@ -19,7 +19,7 @@ import javax.xml.bind.annotation.XmlElement;
  * @author Rogério e Octavio
  */
 public class FormVenda extends javax.swing.JFrame {
-    private Venda venda = null;
+    private Estoque venda = null;
     private Fornecedor fornecedor = null;
       private Cliente cliente = null;
     private Peça peça = null;
@@ -33,7 +33,7 @@ public class FormVenda extends javax.swing.JFrame {
      */
     public FormVenda() {
         initComponents();
-        venda = new Venda();
+        venda = new Estoque();
         modelo = (DefaultTableModel)jTable1.getModel();
         
     }
@@ -89,6 +89,7 @@ public class FormVenda extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Venda (Retirada do Estoque)");
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
@@ -382,7 +383,7 @@ public class FormVenda extends javax.swing.JFrame {
         
         else
         {
-            JOptionPane.showMessageDialog(null, "Livro não encontrado!", "Atenção", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Peça não encontrado!", "Atenção", JOptionPane.INFORMATION_MESSAGE);
             tfCodigo.requestFocus();
         }        // TODO add your handling code here:*/
       
@@ -440,7 +441,7 @@ public class FormVenda extends javax.swing.JFrame {
         int op = JOptionPane.showConfirmDialog(null, "Deseja cancelar a venda?", "Confirmação", JOptionPane.YES_NO_OPTION);
         if(op==JOptionPane.YES_OPTION)
         {
-        venda = new Venda();
+        venda = new Estoque();
         //venda.setNumero(venda.getNumero()-1);
         lbNroVenda.setText(Integer.toString(FormPricipal.daoVenda.Proximo()));
         lbDataVenda.setText(venda.getData());
@@ -472,7 +473,7 @@ public class FormVenda extends javax.swing.JFrame {
               
               JOptionPane.showMessageDialog(null, "Venda Efetuada com sucesso.", "Atenção", JOptionPane.INFORMATION_MESSAGE);
               
-              venda = new Venda();
+              venda = new Estoque();
               limparVenda();             
               btConfirmaCliente.setEnabled(true);
         }
