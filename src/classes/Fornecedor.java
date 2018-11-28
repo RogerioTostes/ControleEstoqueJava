@@ -7,7 +7,7 @@ package classes;
 
 /**
  *
- * @author Gerim
+ * @author Rogério e Octavio
  */
 public class Fornecedor {
 

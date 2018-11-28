@@ -16,7 +16,7 @@ import javax.xml.bind.annotation.XmlElement;
 
 /**
  *
- * @author Gerim
+ * @author Rogério e Octavio
  */
 public class FormVenda extends javax.swing.JFrame {
     private Venda venda = null;
@@ -515,6 +515,7 @@ public class FormVenda extends javax.swing.JFrame {
         lbTitulo.setText("");
         lbTotal.setText("");
         lbValorUnitario.setText("");
+        tfQuantidadeEstoque.setText("");
         limparTabela();
     }
     

@@ -12,7 +12,7 @@ import java.util.List;
 
 /**
  *
- * @author Gerim
+ * @author Rogério e Octavio
  */
 public class VendaDAO {
     

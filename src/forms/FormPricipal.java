@@ -12,7 +12,7 @@ import dao.VendaDAO;
 
 /**
  *
- * @author Gerim
+ * @author Rogério e Octavio
  */
 public class FormPricipal extends javax.swing.JFrame {
     

@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Gerim
+ * @author Rogério e Octavio
  */
 public class FornecedorDAO {
     

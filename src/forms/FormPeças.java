@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Gerim
+ * @author Rogério e Octavio
  */
 public class FormPeças extends javax.swing.JFrame {
 

@@ -12,7 +12,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author Gerim
+ * @author Rogério e Octavio
  */
 public class FormBuscarPeças extends javax.swing.JFrame {
 

@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Tiago Oliveira
+ * @author Rogério e Octavio
  */
 public class FormBuscarCliente extends javax.swing.JFrame {
 

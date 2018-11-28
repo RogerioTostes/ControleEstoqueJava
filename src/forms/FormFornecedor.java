@@ -12,7 +12,7 @@ import javax.swing.JRadioButton;
 
 /**
  *
- * @author Gerim
+ * @author Rogério e Octavio
  */
 public class FormFornecedor extends javax.swing.JFrame {
 

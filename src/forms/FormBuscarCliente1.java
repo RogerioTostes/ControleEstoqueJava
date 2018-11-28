@@ -14,7 +14,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author Gerim
+ * @author Rogério e Octavio
  */
 public class FormBuscarCliente1 extends javax.swing.JFrame {
 
@@ -118,16 +118,15 @@ public class FormBuscarCliente1 extends javax.swing.JFrame {
         jScrollPane2.setViewportView(jTable1);
         if (jTable1.getColumnModel().getColumnCount() > 0) {
             jTable1.getColumnModel().getColumn(0).setResizable(false);
-            jTable1.getColumnModel().getColumn(0).setPreferredWidth(50);
+            jTable1.getColumnModel().getColumn(0).setPreferredWidth(60);
             jTable1.getColumnModel().getColumn(1).setResizable(false);
-            jTable1.getColumnModel().getColumn(1).setPreferredWidth(300);
+            jTable1.getColumnModel().getColumn(1).setPreferredWidth(220);
             jTable1.getColumnModel().getColumn(2).setResizable(false);
             jTable1.getColumnModel().getColumn(2).setPreferredWidth(170);
             jTable1.getColumnModel().getColumn(3).setResizable(false);
-            jTable1.getColumnModel().getColumn(3).setPreferredWidth(50);
+            jTable1.getColumnModel().getColumn(3).setPreferredWidth(170);
             jTable1.getColumnModel().getColumn(4).setResizable(false);
-            jTable1.getColumnModel().getColumn(5).setResizable(false);
-            jTable1.getColumnModel().getColumn(5).setPreferredWidth(100);
+            jTable1.getColumnModel().getColumn(4).setPreferredWidth(120);
         }
 
         try {

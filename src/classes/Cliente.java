@@ -7,7 +7,7 @@ package classes;
 
 /**
  *
- * @author Tiago Oliveira
+ * @author Rogério e Octavio
  */
 public class Cliente {
     

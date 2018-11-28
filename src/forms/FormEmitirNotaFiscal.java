@@ -16,7 +16,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Gerim
+ * @author Rogério e Octavio
  */
 public class FormEmitirNotaFiscal extends javax.swing.JFrame {
 
