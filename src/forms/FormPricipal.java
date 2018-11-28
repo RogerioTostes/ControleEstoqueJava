@@ -222,7 +222,8 @@ public class FormPricipal extends javax.swing.JFrame {
 
     private void jMenuItemConsClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemConsClientesActionPerformed
         // TODO add your handling code here:
-        new FormBuscarFornecedor().setVisible(true);
+       // new FormBuscarFornecedor().setVisible(true);
+           new FormBuscarFornecedor1().setVisible(true);
     }//GEN-LAST:event_jMenuItemConsClientesActionPerformed
 
     private void jMenuItemCadProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCadProdutosActionPerformed
@@ -256,7 +257,8 @@ public class FormPricipal extends javax.swing.JFrame {
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         // TODO add your handling code here:
-        new FormBuscarCliente().setVisible(true);
+        //new FormBuscarCliente().setVisible(true);
+          new FormBuscarCliente1().setVisible(true);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     /**

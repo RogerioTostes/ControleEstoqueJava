@@ -16,6 +16,8 @@ import javax.swing.JRadioButton;
  */
 public class FormFornecedor extends javax.swing.JFrame {
 
+    public Fornecedor fornecedor = null;
+
     /**
      * Creates new form FormCliente
      */
@@ -261,7 +263,7 @@ public class FormFornecedor extends javax.swing.JFrame {
         tfNome.setText("");
         tfTelefone.setText("");
         tfEmail.setText("");
-      tfInsc.setText("");
+        tfInsc.setText("");
 
         abas.setSelectedIndex(0);
 
@@ -289,14 +291,14 @@ public class FormFornecedor extends javax.swing.JFrame {
         tfEmail.setText(fornecedor.getEmail());
         tfInsc.setText(fornecedor.getInsc());
         // setar o estado civil nos campos radio
-   //     JRadioButton radio;
-     //   Enumeration en = bgEstadoCivil.getElements();
-    //    while (en.hasMoreElements()) {
-    //        radio = (JRadioButton) en.nextElement();
-    //        if (radio.getText().equals(fornecedor.getEstadoCivil())) {
-     //           radio.setSelected(true);
-    //        }
-    //    }
+        //     JRadioButton radio;
+        //   Enumeration en = bgEstadoCivil.getElements();
+        //    while (en.hasMoreElements()) {
+        //        radio = (JRadioButton) en.nextElement();
+        //        if (radio.getText().equals(fornecedor.getEstadoCivil())) {
+        //           radio.setSelected(true);
+        //        }
+        //    }
 
         tfLogradouro.setText(fornecedor.getEndereco().getLogradouro());
         tfComplemento.setText(fornecedor.getEndereco().getComplemento());

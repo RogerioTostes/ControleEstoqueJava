@@ -12,10 +12,10 @@ import javax.swing.JRadioButton;
 
 /**
  *
- * @author Tiago Oliveira
+ * @author Rogério e Octavio
  */
 public class FormCliente extends javax.swing.JFrame {
-
+public Cliente cliente = null;
     /**
      * Creates new form FormCliente
      */

@@ -45,7 +45,7 @@ public class FormPeças extends javax.swing.JFrame {
         btCadastrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Cadastro de Livros (Acervo)");
+        setTitle("Cadastro de Peças (Estoque)");
         setMinimumSize(new java.awt.Dimension(90, 70));
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -160,7 +160,7 @@ public class FormPeças extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    public void cadastrarLivro() {
+    public void cadastrarPeça() {
         Peça peça = null;
         for (int i = 1; i < 31; i++) {
 
@@ -286,7 +286,7 @@ public class FormPeças extends javax.swing.JFrame {
         peca.setDataCadastro(tfDataCadastro.getText());
 
         FormPricipal.daoPeça.adicionarPeça(peca);
-        JOptionPane.showMessageDialog(null, "Livro Cadastrado!", "Cadastro de Livros", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Peça Cadastrado!", "Cadastro de Peças", JOptionPane.INFORMATION_MESSAGE);
         limpar();
     }//GEN-LAST:event_btCadastrarActionPerformed
 
@@ -350,4 +350,10 @@ public class FormPeças extends javax.swing.JFrame {
     private javax.swing.JTextField tfQuantidade;
     private javax.swing.JTextField tfValor;
     // End of variables declaration//GEN-END:variables
+
+    private static class Arraylist {
+
+        public Arraylist() {
+        }
+    }
 }
